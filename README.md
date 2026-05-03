@@ -1,7 +1,6 @@
 <div align="center">
 
-<!-- ANIMATED HEADER BANNER SVG -->
-<svg width="900" height="200" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="180" viewBox="0 0 900 180" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#0f0c29"/>
@@ -13,10 +12,11 @@
       <stop offset="50%" style="stop-color:#378ADD"/>
       <stop offset="100%" style="stop-color:#7F77DD"/>
     </linearGradient>
-    <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#D85A30;stop-opacity:0"/>
-      <stop offset="50%" style="stop-color:#D85A30;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#D85A30;stop-opacity:0"/>
+    <linearGradient id="pulse1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#5DCAA5;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#5DCAA5;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#5DCAA5;stop-opacity:0"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="2s" repeatCount="indefinite"/>
     </linearGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -25,69 +25,60 @@
   </defs>
 
   <!-- Background -->
-  <rect width="900" height="200" fill="url(#bgGrad)" rx="16"/>
+  <rect width="900" height="180" rx="18" fill="url(#bgGrad)"/>
 
-  <!-- Animated heartbeat line -->
-  <polyline points="0,100 60,100 80,100 100,40 120,160 140,100 160,100 220,100 240,60 260,140 280,100 900,100"
-    fill="none" stroke="url(#pulseGrad)" stroke-width="2.5" opacity="0.7">
-    <animate attributeName="stroke-dasharray" from="0,2000" to="2000,0" dur="3s" repeatCount="indefinite"/>
+  <!-- Decorative circles -->
+  <circle cx="60" cy="90" r="45" fill="none" stroke="#5DCAA5" stroke-width="1" opacity="0.3">
+    <animate attributeName="r" values="45;55;45" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="60" cy="90" r="28" fill="none" stroke="#378ADD" stroke-width="1.5" opacity="0.5">
+    <animate attributeName="r" values="28;35;28" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <!-- ECG line left -->
+  <polyline points="20,90 35,90 40,60 45,115 50,70 55,105 60,90 90,90" fill="none" stroke="#5DCAA5" stroke-width="2" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
   </polyline>
 
-  <!-- Floating circles decoration -->
-  <circle cx="50" cy="40" r="25" fill="#5DCAA5" opacity="0.08"/>
-  <circle cx="850" cy="160" r="40" fill="#378ADD" opacity="0.08"/>
-  <circle cx="820" cy="30" r="15" fill="#7F77DD" opacity="0.12"/>
-  <circle cx="80" cy="170" r="20" fill="#D85A30" opacity="0.1"/>
+  <circle cx="840" cy="90" r="45" fill="none" stroke="#7F77DD" stroke-width="1" opacity="0.3">
+    <animate attributeName="r" values="45;55;45" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="840" cy="90" r="28" fill="none" stroke="#D85A30" stroke-width="1.5" opacity="0.5">
+    <animate attributeName="r" values="28;35;28" dur="2.8s" repeatCount="indefinite"/>
+  </circle>
+  <polyline points="810,90 825,90 830,60 835,115 840,70 845,105 850,90 880,90" fill="none" stroke="#7F77DD" stroke-width="2" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+  </polyline>
 
-  <!-- Grid dots -->
-  <g opacity="0.15">
-    <circle cx="200" cy="30" r="1.5" fill="#5DCAA5"/>
-    <circle cx="240" cy="30" r="1.5" fill="#5DCAA5"/>
-    <circle cx="280" cy="30" r="1.5" fill="#5DCAA5"/>
-    <circle cx="200" cy="60" r="1.5" fill="#5DCAA5"/>
-    <circle cx="240" cy="60" r="1.5" fill="#5DCAA5"/>
-    <circle cx="280" cy="60" r="1.5" fill="#5DCAA5"/>
-    <circle cx="620" cy="140" r="1.5" fill="#378ADD"/>
-    <circle cx="660" cy="140" r="1.5" fill="#378ADD"/>
-    <circle cx="700" cy="140" r="1.5" fill="#378ADD"/>
-    <circle cx="620" cy="170" r="1.5" fill="#378ADD"/>
-    <circle cx="660" cy="170" r="1.5" fill="#378ADD"/>
-    <circle cx="700" cy="170" r="1.5" fill="#378ADD"/>
-  </g>
-
-  <!-- Main title -->
-  <text x="450" y="88" text-anchor="middle" font-family="'Segoe UI', sans-serif"
-    font-size="46" font-weight="900" fill="url(#textGrad)" filter="url(#glow)">
-    MedRisk Classifier
-  </text>
+  <!-- Title -->
+  <text x="450" y="72" font-family="'Segoe UI', system-ui, sans-serif" font-size="42" font-weight="800" text-anchor="middle" fill="url(#textGrad)" filter="url(#glow)">MedRisk Classifier</text>
 
   <!-- Subtitle -->
-  <text x="450" y="122" text-anchor="middle" font-family="'Segoe UI', sans-serif"
-    font-size="16" fill="#B4B2A9" letter-spacing="3">
-    GENERALIZABLE ML · CHRONIC DISEASE PREDICTION
-  </text>
+  <text x="450" y="108" font-family="'Segoe UI', system-ui, sans-serif" font-size="16" text-anchor="middle" fill="#a0aec0" letter-spacing="3">GENERALIZABLE ML · CHRONIC DISEASE PREDICTION</text>
 
-  <!-- Bottom accent bar -->
-  <rect x="300" y="148" width="300" height="2" fill="url(#textGrad)" rx="1" opacity="0.8"/>
+  <!-- Animated underline -->
+  <rect x="200" y="120" width="0" height="2" rx="1" fill="url(#textGrad)">
+    <animate attributeName="width" values="0;500;0" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="x" values="450;200;450" dur="4s" repeatCount="indefinite"/>
+  </rect>
 
-  <!-- Tag line -->
-  <text x="450" y="172" text-anchor="middle" font-family="'Segoe UI', sans-serif"
-    font-size="13" fill="#5DCAA5" opacity="0.9">
-    3 Datasets · 4 Models · Optuna Tuned · Live Gradio Demo
-  </text>
+  <!-- Stats row -->
+  <text x="230" y="155" font-family="'Segoe UI', sans-serif" font-size="13" text-anchor="middle" fill="#5DCAA5" font-weight="600">3 DATASETS</text>
+  <text x="350" y="155" font-family="'Segoe UI', sans-serif" font-size="13" text-anchor="middle" fill="#378ADD" font-weight="600">4 MODELS</text>
+  <text x="450" y="155" font-family="'Segoe UI', sans-serif" font-size="13" text-anchor="middle" fill="#7F77DD" font-weight="600">AUC UP TO 0.979</text>
+  <text x="570" y="155" font-family="'Segoe UI', sans-serif" font-size="13" text-anchor="middle" fill="#D85A30" font-weight="600">OPTUNA TUNED</text>
+  <text x="680" y="155" font-family="'Segoe UI', sans-serif" font-size="13" text-anchor="middle" fill="#EF9F27" font-weight="600">GRADIO DEPLOYED</text>
 </svg>
 
 <br/>
 
-<!-- BADGES -->
-![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Kaggle](https://img.shields.io/badge/Kaggle-GPU%20Accelerated-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)
 ![XGBoost](https://img.shields.io/badge/XGBoost-Tuned-FF6600?style=for-the-badge&logo=xgboost&logoColor=white)
-![LightGBM](https://img.shields.io/badge/LightGBM-Tuned-02B97B?style=for-the-badge)
+![LightGBM](https://img.shields.io/badge/LightGBM-Optimized-0175C2?style=for-the-badge&logo=lightgbm&logoColor=white)
 ![Gradio](https://img.shields.io/badge/Gradio-Live%20Demo-F97316?style=for-the-badge&logo=gradio&logoColor=white)
-![Optuna](https://img.shields.io/badge/Optuna-50%20Trials-7C3AED?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Production%20Ready-5DCAA5?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-10B981?style=for-the-badge)
 
 </div>
 
@@ -95,609 +86,524 @@
 
 <div align="center">
 
-## 🎯 Try It Live
+## 🎯 Live Demo
 
-**[![🚀 Launch Gradio Demo](https://img.shields.io/badge/🚀%20Launch%20Demo-Gradio%20Live-F97316?style=for-the-badge&logoColor=white)](YOUR_GRADIO_LINK_HERE)**
-
-*No signup · No install · Works in your browser*
+**▶ [Try the App on Kaggle](YOUR_KAGGLE_NOTEBOOK_LINK)**&nbsp;&nbsp;|&nbsp;&nbsp;**📓 [View Notebook](YOUR_NOTEBOOK_LINK)**&nbsp;&nbsp;|&nbsp;&nbsp;**📊 [Datasets](#-datasets)**
 
 </div>
 
 ---
 
-## 📖 Table of Contents
+## 📖 Overview
 
-| | Section |
-|:---:|:---|
-| 🧠 | [Project Overview](#-project-overview) |
-| 📊 | [Datasets](#-datasets) |
-| 🏗️ | [System Architecture](#️-system-architecture) |
-| 🔬 | [ML Pipeline](#-ml-pipeline) |
-| 📈 | [Results & Leaderboard](#-results--leaderboard) |
-| ⚙️ | [Feature Engineering](#️-feature-engineering) |
-| 🚀 | [Quick Start](#-quick-start) |
-| 🗂️ | [Project Structure](#️-project-structure) |
-| 🧩 | [Tech Stack](#-tech-stack) |
+> **MedRisk Classifier** is a production-ready, generalizable machine learning pipeline for chronic disease risk prediction. It demonstrates that a single, well-engineered ML workflow can be adapted across multiple clinical datasets with minimal changes — making it a template for real-world medical AI applications.
+
+The project trains, evaluates, tunes, and deploys **four classifiers** across **three independent clinical datasets**, using clinically meaningful evaluation metrics (sensitivity, specificity, ROC-AUC), SMOTE balancing, Optuna hyperparameter tuning, and feature engineering. The final Gradio interface allows anyone to input patient vitals and receive an instant risk assessment — no setup required.
 
 ---
 
-## 🧠 Project Overview
+## ✨ Key Highlights
 
 <div align="center">
 
-*A production-grade, generalizable machine learning system for predicting chronic disease risk across multiple independent clinical datasets — unified under a single pipeline architecture.*
+<table>
+<tr>
+<td align="center" width="200">
+
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="30" fill="#0f1923" stroke="#5DCAA5" stroke-width="2"/>
+  <path d="M16,32 L24,32 L27,20 L30,42 L33,26 L36,36 L39,32 L48,32" fill="none" stroke="#5DCAA5" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="2s" fill="freeze"/>
+  </path>
+</svg>
+
+**Clinical Metrics**
+Sensitivity · Specificity · ROC-AUC · F1
+
+</td>
+<td align="center" width="200">
+
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="30" fill="#0f1923" stroke="#378ADD" stroke-width="2"/>
+  <rect x="18" y="38" width="8" height="12" rx="2" fill="#378ADD" opacity="0.5"/>
+  <rect x="28" y="28" width="8" height="22" rx="2" fill="#378ADD" opacity="0.75"/>
+  <rect x="38" y="18" width="8" height="32" rx="2" fill="#378ADD">
+    <animate attributeName="height" values="10;32;10" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="40;18;40" dur="2.5s" repeatCount="indefinite"/>
+  </rect>
+</svg>
+
+**Optuna Tuning**
+50–100 TPE trials per model
+
+</td>
+<td align="center" width="200">
+
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="30" fill="#0f1923" stroke="#7F77DD" stroke-width="2"/>
+  <circle cx="32" cy="32" r="14" fill="none" stroke="#7F77DD" stroke-width="2" stroke-dasharray="4,4">
+    <animateTransform attributeName="transform" type="rotate" from="0 32 32" to="360 32 32" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="32" cy="18" r="4" fill="#7F77DD"/>
+  <circle cx="44" cy="40" r="4" fill="#5DCAA5"/>
+  <circle cx="20" cy="40" r="4" fill="#D85A30"/>
+</svg>
+
+**3 Datasets**
+100k · 297 · 768 patients
+
+</td>
+<td align="center" width="200">
+
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="30" fill="#0f1923" stroke="#D85A30" stroke-width="2"/>
+  <rect x="20" y="20" width="24" height="28" rx="4" fill="none" stroke="#D85A30" stroke-width="2"/>
+  <line x1="26" y1="30" x2="38" y2="30" stroke="#D85A30" stroke-width="2" stroke-linecap="round"/>
+  <line x1="26" y1="36" x2="34" y2="36" stroke="#D85A30" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="44" cy="44" r="8" fill="#1D9E75"/>
+  <text x="44" y="48" font-size="10" text-anchor="middle" fill="white" font-weight="bold">✓</text>
+</svg>
+
+**Live Gradio App**
+3-tab interactive demo
+
+</td>
+<td align="center" width="200">
+
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="30" fill="#0f1923" stroke="#EF9F27" stroke-width="2"/>
+  <polygon points="32,14 36,26 48,26 38,34 42,46 32,38 22,46 26,34 16,26 28,26" fill="none" stroke="#EF9F27" stroke-width="2">
+    <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+  </polygon>
+  <polygon points="32,20 34,27 41,27 36,31 38,38 32,34 26,38 28,31 23,27 30,27" fill="#EF9F27" opacity="0.6"/>
+</svg>
+
+**Feature Engineering**
+16 clinical interaction features
+
+</td>
+</tr>
+</table>
 
 </div>
 
-This project demonstrates that a **single well-engineered ML pipeline** can generalize across fundamentally different medical datasets without dataset-specific hacks. Three independent clinical datasets, four classifiers, Optuna hyperparameter tuning, SMOTE class balancing, and a live Gradio interface — all in a clean, reproducible Kaggle notebook.
-
-**Why this matters clinically:** Sensitivity and specificity are optimized separately for each condition — missing a true positive in a heart disease context is far more costly than a false alarm.
-
 ---
 
-## 📊 Datasets
+## 🗂️ Datasets
 
 <div align="center">
 
-<!-- DATASETS SVG DIAGRAM -->
-<svg width="860" height="220" viewBox="0 0 860 220" xmlns="http://www.w3.org/2000/svg">
+<svg width="860" height="200" viewBox="0 0 860 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="cardA" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a1a2e"/>
-      <stop offset="100%" style="stop-color:#16213e"/>
+    <linearGradient id="card1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d3b2e"/>
+      <stop offset="100%" style="stop-color:#0a1a14"/>
     </linearGradient>
-    <linearGradient id="accentA" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#5DCAA5"/>
-      <stop offset="100%" style="stop-color:#378ADD"/>
+    <linearGradient id="card2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d2a3b"/>
+      <stop offset="100%" style="stop-color:#0a1520"/>
     </linearGradient>
-    <linearGradient id="accentB" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#D85A30"/>
-      <stop offset="100%" style="stop-color:#7F77DD"/>
-    </linearGradient>
-    <linearGradient id="accentC" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#378ADD"/>
-      <stop offset="100%" style="stop-color:#5DCAA5"/>
+    <linearGradient id="card3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d1a3b"/>
+      <stop offset="100%" style="stop-color:#150a1a"/>
     </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="860" height="220" fill="#0d1117" rx="14"/>
-
   <!-- Card 1 -->
-  <rect x="20" y="20" width="260" height="180" fill="#161b22" rx="12" stroke="#5DCAA5" stroke-width="1.5"/>
-  <rect x="20" y="20" width="260" height="5" fill="url(#accentA)" rx="3"/>
-  <text x="150" y="55" text-anchor="middle" font-family="sans-serif" font-size="28">🩸</text>
-  <text x="150" y="82" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#5DCAA5">Diabetes Prediction</text>
-  <text x="150" y="100" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#8b949e">iammustafatz · Kaggle</text>
-  <line x1="40" y1="110" x2="260" y2="110" stroke="#21262d" stroke-width="1"/>
-  <text x="40" y="128" font-family="sans-serif" font-size="11" fill="#8b949e">📦 Rows</text>
-  <text x="260" y="128" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#e6edf3">100,000</text>
-  <text x="40" y="146" font-family="sans-serif" font-size="11" fill="#8b949e">🔢 Features</text>
-  <text x="260" y="146" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#e6edf3">8 → 8</text>
-  <text x="40" y="164" font-family="sans-serif" font-size="11" fill="#8b949e">⚖️ Imbalance</text>
-  <text x="260" y="164" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#D85A30">91.5% / 8.5%</text>
-  <text x="40" y="182" font-family="sans-serif" font-size="11" fill="#8b949e">🏆 Best Model</text>
-  <text x="260" y="182" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#5DCAA5">LightGBM</text>
-  <text x="40" y="195" font-family="sans-serif" font-size="10" fill="#8b949e">AUC</text>
-  <rect x="60" y="187" width="140" height="6" fill="#21262d" rx="3"/>
-  <rect x="60" y="187" width="137" height="6" fill="url(#accentA)" rx="3"/>
-  <text x="205" y="195" font-family="sans-serif" font-size="10" font-weight="700" fill="#5DCAA5">0.979</text>
+  <rect x="10" y="10" width="260" height="180" rx="14" fill="url(#card1)" stroke="#5DCAA5" stroke-width="1.5"/>
+  <rect x="10" y="10" width="260" height="6" rx="4" fill="#5DCAA5"/>
+  <text x="140" y="50" font-family="'Segoe UI',sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#5DCAA5">🩸 Diabetes Prediction</text>
+  <text x="140" y="72" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#a0aec0">iammustafatz · Kaggle</text>
+  <line x1="30" y1="82" x2="250" y2="82" stroke="#5DCAA5" stroke-width="0.5" opacity="0.4"/>
+  <text x="30" y="100" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">📦 Rows</text>
+  <text x="250" y="100" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#5DCAA5" font-weight="600">100,000</text>
+  <text x="30" y="118" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">🔢 Features</text>
+  <text x="250" y="118" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#5DCAA5" font-weight="600">8</text>
+  <text x="30" y="136" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">⚖️ Positive Rate</text>
+  <text x="250" y="136" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#D85A30" font-weight="600">8.5% (imbalanced)</text>
+  <text x="30" y="154" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">🏆 Best Model</text>
+  <text x="250" y="154" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#EF9F27" font-weight="600">LightGBM</text>
+  <text x="30" y="172" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">📈 AUC</text>
+  <text x="250" y="172" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#5DCAA5" font-weight="700">0.979</text>
 
   <!-- Card 2 -->
-  <rect x="300" y="20" width="260" height="180" fill="#161b22" rx="12" stroke="#D85A30" stroke-width="1.5"/>
-  <rect x="300" y="20" width="260" height="5" fill="url(#accentB)" rx="3"/>
-  <text x="430" y="55" text-anchor="middle" font-family="sans-serif" font-size="28">❤️</text>
-  <text x="430" y="82" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#D85A30">Heart Disease</text>
-  <text x="430" y="100" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#8b949e">Cleveland UCI · cherngs</text>
-  <line x1="320" y1="110" x2="540" y2="110" stroke="#21262d" stroke-width="1"/>
-  <text x="320" y="128" font-family="sans-serif" font-size="11" fill="#8b949e">📦 Rows</text>
-  <text x="540" y="128" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#e6edf3">297</text>
-  <text x="320" y="146" font-family="sans-serif" font-size="11" fill="#8b949e">🔢 Features</text>
-  <text x="540" y="146" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#e6edf3">13 → 13</text>
-  <text x="320" y="164" font-family="sans-serif" font-size="11" fill="#8b949e">⚖️ Imbalance</text>
-  <text x="540" y="164" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#5DCAA5">53.9% / 46.1%</text>
-  <text x="320" y="182" font-family="sans-serif" font-size="11" fill="#8b949e">🏆 Best Model</text>
-  <text x="540" y="182" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#D85A30">Logistic Reg.</text>
-  <text x="320" y="195" font-family="sans-serif" font-size="10" fill="#8b949e">AUC</text>
-  <rect x="340" y="187" width="140" height="6" fill="#21262d" rx="3"/>
-  <rect x="340" y="187" width="134" height="6" fill="url(#accentB)" rx="3"/>
-  <text x="485" y="195" font-family="sans-serif" font-size="10" font-weight="700" fill="#D85A30">0.958</text>
+  <rect x="300" y="10" width="260" height="180" rx="14" fill="url(#card2)" stroke="#378ADD" stroke-width="1.5"/>
+  <rect x="300" y="10" width="260" height="6" rx="4" fill="#378ADD"/>
+  <text x="430" y="50" font-family="'Segoe UI',sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#378ADD">❤️ Heart Disease</text>
+  <text x="430" y="72" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#a0aec0">Cleveland UCI · cherngs</text>
+  <line x1="320" y1="82" x2="540" y2="82" stroke="#378ADD" stroke-width="0.5" opacity="0.4"/>
+  <text x="320" y="100" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">📦 Rows</text>
+  <text x="540" y="100" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#378ADD" font-weight="600">297</text>
+  <text x="320" y="118" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">🔢 Features</text>
+  <text x="540" y="118" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#378ADD" font-weight="600">13</text>
+  <text x="320" y="136" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">⚖️ Positive Rate</text>
+  <text x="540" y="136" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#5DCAA5" font-weight="600">46.1% (balanced)</text>
+  <text x="320" y="154" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">🏆 Best Model</text>
+  <text x="540" y="154" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#EF9F27" font-weight="600">Logistic Regression</text>
+  <text x="320" y="172" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">📈 AUC</text>
+  <text x="540" y="172" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#378ADD" font-weight="700">0.958</text>
 
   <!-- Card 3 -->
-  <rect x="580" y="20" width="260" height="180" fill="#161b22" rx="12" stroke="#378ADD" stroke-width="1.5"/>
-  <rect x="580" y="20" width="260" height="5" fill="url(#accentC)" rx="3"/>
-  <text x="710" y="55" text-anchor="middle" font-family="sans-serif" font-size="28">🧬</text>
-  <text x="710" y="82" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#378ADD">Pima Indians Diabetes</text>
-  <text x="710" y="100" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#8b949e">UCI ML · uciml</text>
-  <line x1="600" y1="110" x2="820" y2="110" stroke="#21262d" stroke-width="1"/>
-  <text x="600" y="128" font-family="sans-serif" font-size="11" fill="#8b949e">📦 Rows</text>
-  <text x="820" y="128" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#e6edf3">768</text>
-  <text x="600" y="146" font-family="sans-serif" font-size="11" fill="#8b949e">🔢 Features</text>
-  <text x="820" y="146" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#e6edf3">8 → 16 (engineered)</text>
-  <text x="600" y="164" font-family="sans-serif" font-size="11" fill="#8b949e">⚖️ Imbalance</text>
-  <text x="820" y="164" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#BA7517">65.1% / 34.9%</text>
-  <text x="600" y="182" font-family="sans-serif" font-size="11" fill="#8b949e">🏆 Best Model</text>
-  <text x="820" y="182" text-anchor="end" font-family="sans-serif" font-size="11" font-weight="600" fill="#378ADD">XGBoost</text>
-  <text x="600" y="195" font-family="sans-serif" font-size="10" fill="#8b949e">AUC</text>
-  <rect x="620" y="187" width="140" height="6" fill="#21262d" rx="3"/>
-  <rect x="620" y="187" width="118" height="6" fill="url(#accentC)" rx="3"/>
-  <text x="765" y="195" font-family="sans-serif" font-size="10" font-weight="700" fill="#378ADD">0.838</text>
+  <rect x="590" y="10" width="260" height="180" rx="14" fill="url(#card3)" stroke="#7F77DD" stroke-width="1.5"/>
+  <rect x="590" y="10" width="260" height="6" rx="4" fill="#7F77DD"/>
+  <text x="720" y="50" font-family="'Segoe UI',sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#7F77DD">🧬 Pima Diabetes</text>
+  <text x="720" y="72" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#a0aec0">UCI ML · Pima Indians</text>
+  <line x1="610" y1="82" x2="830" y2="82" stroke="#7F77DD" stroke-width="0.5" opacity="0.4"/>
+  <text x="610" y="100" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">📦 Rows</text>
+  <text x="830" y="100" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#7F77DD" font-weight="600">768</text>
+  <text x="610" y="118" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">🔢 Features</text>
+  <text x="830" y="118" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#7F77DD" font-weight="600">8 → 16 (engineered)</text>
+  <text x="610" y="136" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">⚖️ Positive Rate</text>
+  <text x="830" y="136" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#EF9F27" font-weight="600">34.9% (moderate)</text>
+  <text x="610" y="154" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">🏆 Best Model</text>
+  <text x="830" y="154" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#EF9F27" font-weight="600">XGBoost (tuned)</text>
+  <text x="610" y="172" font-family="'Segoe UI',sans-serif" font-size="12" fill="#e2e8f0">📈 AUC</text>
+  <text x="830" y="172" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="end" fill="#7F77DD" font-weight="700">0.838</text>
 </svg>
 
 </div>
 
 ---
 
-## 🏗️ System Architecture
+## 🔄 Pipeline Architecture
 
 <div align="center">
 
-<!-- ARCHITECTURE FLOWCHART SVG -->
 <svg width="860" height="520" viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="archBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0d1117"/>
+    <linearGradient id="stageBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a1a"/>
       <stop offset="100%" style="stop-color:#0d1117"/>
     </linearGradient>
-    <linearGradient id="inputGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1f6feb"/>
-      <stop offset="100%" style="stop-color:#0d419d"/>
-    </linearGradient>
-    <linearGradient id="prepGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#238636"/>
-      <stop offset="100%" style="stop-color:#196127"/>
-    </linearGradient>
-    <linearGradient id="modelGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#9333ea"/>
-      <stop offset="100%" style="stop-color:#6b21a8"/>
-    </linearGradient>
-    <linearGradient id="tuneGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#d97706"/>
-      <stop offset="100%" style="stop-color:#92400e"/>
-    </linearGradient>
-    <linearGradient id="deployGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#0e9f6e"/>
-      <stop offset="100%" style="stop-color:#057a55"/>
-    </linearGradient>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
-      markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4d5566"/>
+    <marker id="arrowG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#5DCAA5"/>
     </marker>
-    <marker id="arrowTeal" viewBox="0 0 10 10" refX="9" refY="5"
-      markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5DCAA5"/>
+    <marker id="arrowB" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#378ADD"/>
     </marker>
-    <filter id="cardShadow">
-      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    <marker id="arrowP" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#7F77DD"/>
+    </marker>
+    <marker id="arrowO" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#EF9F27"/>
+    </marker>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
-  <rect width="860" height="520" fill="#0d1117" rx="14"/>
+  <rect width="860" height="520" rx="16" fill="url(#stageBg)" stroke="#1e2433" stroke-width="1"/>
 
-  <!-- ── ROW 1: DATA SOURCES ── -->
-  <text x="430" y="28" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4d5566" letter-spacing="2">DATA SOURCES</text>
+  <!-- Title -->
+  <text x="430" y="32" font-family="'Segoe UI',sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#e2e8f0" letter-spacing="2">END-TO-END PIPELINE</text>
+  <line x1="160" y1="42" x2="700" y2="42" stroke="#2d3748" stroke-width="1"/>
 
-  <!-- DS1 -->
-  <rect x="30" y="36" width="180" height="54" fill="url(#inputGrad)" rx="8" filter="url(#cardShadow)"/>
-  <text x="120" y="58" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">🩸 Diabetes Large</text>
-  <text x="120" y="76" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#93c5fd">100,000 rows · 8 features</text>
-
-  <!-- DS2 -->
-  <rect x="340" y="36" width="180" height="54" fill="url(#inputGrad)" rx="8" filter="url(#cardShadow)"/>
-  <text x="430" y="58" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">❤️ Heart Cleveland</text>
-  <text x="430" y="76" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#93c5fd">297 rows · 13 features</text>
-
-  <!-- DS3 -->
-  <rect x="650" y="36" width="180" height="54" fill="url(#inputGrad)" rx="8" filter="url(#cardShadow)"/>
-  <text x="740" y="58" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">🧬 Pima Indians</text>
-  <text x="740" y="76" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#93c5fd">768 rows · 8 features</text>
-
-  <!-- Arrows DS → PREP -->
-  <line x1="120" y1="90" x2="120" y2="148" stroke="#4d5566" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
-  <line x1="430" y1="90" x2="430" y2="148" stroke="#4d5566" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
-  <line x1="740" y1="90" x2="740" y2="148" stroke="#4d5566" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
-
-  <!-- ── ROW 2: PREPROCESSING ── -->
-  <text x="430" y="142" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4d5566" letter-spacing="2">PREPROCESSING</text>
-
-  <!-- Prep boxes -->
-  <rect x="30" y="150" width="180" height="72" fill="url(#prepGrad)" rx="8" filter="url(#cardShadow)"/>
-  <text x="120" y="170" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="white">⚙️ Encode + Scale</text>
-  <text x="120" y="186" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#86efac">LabelEncoder</text>
-  <text x="120" y="200" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#86efac">StandardScaler</text>
-  <text x="120" y="214" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#86efac">SMOTE balancing</text>
-
-  <rect x="340" y="150" width="180" height="72" fill="url(#prepGrad)" rx="8" filter="url(#cardShadow)"/>
-  <text x="430" y="170" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="white">⚙️ Binarize + Scale</text>
-  <text x="430" y="186" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#86efac">condition → 0/1</text>
-  <text x="430" y="200" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#86efac">StandardScaler</text>
-  <text x="430" y="214" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#86efac">SMOTE balancing</text>
-
-  <rect x="650" y="150" width="180" height="72" fill="url(#prepGrad)" rx="8" filter="url(#cardShadow)"/>
-  <text x="740" y="170" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="white">⚙️ Impute + Engineer</text>
-  <text x="740" y="186" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#86efac">Zero→Median impute</text>
-  <text x="740" y="200" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#86efac">8 → 16 features</text>
-  <text x="740" y="214" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#86efac">SMOTE balancing</text>
-
-  <!-- Converging arrows to MODEL block -->
-  <line x1="120" y1="222" x2="120" y2="250" stroke="#4d5566" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <line x1="430" y1="222" x2="430" y2="250" stroke="#4d5566" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <line x1="740" y1="222" x2="740" y2="250" stroke="#4d5566" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <line x1="120" y1="250" x2="740" y2="250" stroke="#4d5566" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <line x1="430" y1="250" x2="430" y2="268" stroke="#5DCAA5" stroke-width="2" marker-end="url(#arrowTeal)"/>
-
-  <!-- ── ROW 3: MODELS ── -->
-  <text x="430" y="262" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4d5566" letter-spacing="2">MODEL TRAINING</text>
-
-  <rect x="100" y="270" width="660" height="74" fill="#161b22" rx="10" stroke="#9333ea" stroke-width="1.5" filter="url(#cardShadow)"/>
-
-  <!-- 4 model pills -->
-  <rect x="116" y="285" width="140" height="44" fill="url(#modelGrad)" rx="7"/>
-  <text x="186" y="305" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">📐 Logistic</text>
-  <text x="186" y="320" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#d8b4fe">Regression</text>
-
-  <rect x="276" y="285" width="140" height="44" fill="url(#modelGrad)" rx="7"/>
-  <text x="346" y="305" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">🌲 Random</text>
-  <text x="346" y="320" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#d8b4fe">Forest</text>
-
-  <rect x="436" y="285" width="140" height="44" fill="url(#modelGrad)" rx="7"/>
-  <text x="506" y="305" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">⚡ XGBoost</text>
-  <text x="506" y="320" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#d8b4fe">GPU Accelerated</text>
-
-  <rect x="596" y="285" width="148" height="44" fill="url(#modelGrad)" rx="7"/>
-  <text x="670" y="305" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">💡 LightGBM</text>
-  <text x="670" y="320" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#d8b4fe">Histogram-based</text>
-
-  <line x1="430" y1="344" x2="430" y2="362" stroke="#5DCAA5" stroke-width="2" marker-end="url(#arrowTeal)"/>
-
-  <!-- ── ROW 4: OPTUNA ── -->
-  <text x="430" y="357" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4d5566" letter-spacing="2">HYPERPARAMETER TUNING</text>
-
-  <rect x="180" y="364" width="500" height="56" fill="#161b22" rx="10" stroke="#d97706" stroke-width="1.5" filter="url(#cardShadow)"/>
-  <text x="430" y="388" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#fbbf24">🔬 Optuna TPE — 50 Trials per Best Model</text>
-  <text x="430" y="408" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#8b949e">Maximise ROC-AUC · LightGBM · Logistic Regression · XGBoost</text>
-
-  <line x1="430" y1="420" x2="430" y2="438" stroke="#5DCAA5" stroke-width="2" marker-end="url(#arrowTeal)"/>
-
-  <!-- ── ROW 5: OUTPUT ── -->
-  <text x="430" y="432" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4d5566" letter-spacing="2">DEPLOYMENT</text>
-
-  <rect x="180" y="440" width="500" height="56" fill="url(#deployGrad)" rx="10" filter="url(#cardShadow)"/>
-  <text x="430" y="464" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="white">🚀 Gradio App — Live on Kaggle</text>
-  <text x="430" y="483" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#a7f3d0">3-tab interface · Real-time inference · Public share link</text>
-</svg>
-
-</div>
-
----
-
-## 🔬 ML Pipeline
-
-<div align="center">
-
-<!-- PIPELINE DETAIL SVG -->
-<svg width="860" height="300" viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="pipelineBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0d1117"/>
-      <stop offset="100%" style="stop-color:#0d1117"/>
-    </linearGradient>
-    <linearGradient id="step1g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1d4ed8"/><stop offset="100%" style="stop-color:#1e40af"/>
-    </linearGradient>
-    <linearGradient id="step2g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#059669"/><stop offset="100%" style="stop-color:#047857"/>
-    </linearGradient>
-    <linearGradient id="step3g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#7c3aed"/><stop offset="100%" style="stop-color:#6d28d9"/>
-    </linearGradient>
-    <linearGradient id="step4g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#b45309"/><stop offset="100%" style="stop-color:#92400e"/>
-    </linearGradient>
-    <linearGradient id="step5g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0e9f6e"/><stop offset="100%" style="stop-color:#057a55"/>
-    </linearGradient>
-    <marker id="pArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#5DCAA5"/>
-    </marker>
-  </defs>
-  <rect width="860" height="300" fill="#0d1117" rx="14"/>
-
-  <!-- Step circles + labels top row -->
-  <!-- Step 1 -->
-  <circle cx="80" cy="90" r="36" fill="url(#step1g)" stroke="#3b82f6" stroke-width="2"/>
-  <text x="80" y="84" text-anchor="middle" font-family="sans-serif" font-size="20">📂</text>
-  <text x="80" y="103" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="white">LOAD</text>
-  <text x="80" y="145" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">CSV ingestion</text>
-  <text x="80" y="158" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">Target normalize</text>
+  <!-- STAGE 1: DATA INGESTION -->
+  <rect x="30" y="58" width="800" height="72" rx="10" fill="#0d1f12" stroke="#5DCAA5" stroke-width="1.5"/>
+  <rect x="30" y="58" width="5" height="72" rx="3" fill="#5DCAA5"/>
+  <text x="58" y="82" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" fill="#5DCAA5" letter-spacing="1">STAGE 1 · DATA INGESTION</text>
+  <!-- 3 dataset pills -->
+  <rect x="58" y="92" width="180" height="28" rx="6" fill="#0a2d1a" stroke="#5DCAA5" stroke-width="1"/>
+  <text x="148" y="111" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#5DCAA5">🩸 Diabetes-Large (100k)</text>
+  <rect x="254" y="92" width="180" height="28" rx="6" fill="#0a2d1a" stroke="#5DCAA5" stroke-width="1"/>
+  <text x="344" y="111" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#5DCAA5">❤️ Heart-Cleveland (297)</text>
+  <rect x="450" y="92" width="180" height="28" rx="6" fill="#0a2d1a" stroke="#5DCAA5" stroke-width="1"/>
+  <text x="540" y="111" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#5DCAA5">🧬 Pima Diabetes (768)</text>
+  <text x="680" y="99" font-family="'Segoe UI',sans-serif" font-size="10" fill="#718096">target → 0/1</text>
+  <text x="680" y="115" font-family="'Segoe UI',sans-serif" font-size="10" fill="#718096">normalized</text>
 
   <!-- Arrow 1→2 -->
-  <line x1="118" y1="90" x2="192" y2="90" stroke="#5DCAA5" stroke-width="2" marker-end="url(#pArrow)"/>
+  <line x1="430" y1="130" x2="430" y2="150" stroke="#5DCAA5" stroke-width="2" marker-end="url(#arrowG)"/>
 
-  <!-- Step 2 -->
-  <circle cx="230" cy="90" r="36" fill="url(#step2g)" stroke="#10b981" stroke-width="2"/>
-  <text x="230" y="84" text-anchor="middle" font-family="sans-serif" font-size="20">🩹</text>
-  <text x="230" y="103" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="white">CLEAN</text>
-  <text x="230" y="145" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">Zero imputation</text>
-  <text x="230" y="158" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">Label encoding</text>
+  <!-- STAGE 2: PREPROCESSING -->
+  <rect x="30" y="152" width="800" height="72" rx="10" fill="#0d1a2a" stroke="#378ADD" stroke-width="1.5"/>
+  <rect x="30" y="152" width="5" height="72" rx="3" fill="#378ADD"/>
+  <text x="58" y="176" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" fill="#378ADD" letter-spacing="1">STAGE 2 · PREPROCESSING</text>
+  <rect x="58" y="186" width="140" height="28" rx="6" fill="#0a1a2d" stroke="#378ADD" stroke-width="1"/>
+  <text x="128" y="205" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#378ADD">Zero Imputation</text>
+  <rect x="210" y="186" width="140" height="28" rx="6" fill="#0a1a2d" stroke="#378ADD" stroke-width="1"/>
+  <text x="280" y="205" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#378ADD">Label Encoding</text>
+  <rect x="362" y="186" width="140" height="28" rx="6" fill="#0a1a2d" stroke="#378ADD" stroke-width="1"/>
+  <text x="432" y="205" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#378ADD">StandardScaler</text>
+  <rect x="514" y="186" width="140" height="28" rx="6" fill="#0a1a2d" stroke="#378ADD" stroke-width="1"/>
+  <text x="584" y="205" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#378ADD">SMOTE Balance</text>
+  <rect x="666" y="186" width="148" height="28" rx="6" fill="#0a1a2d" stroke="#378ADD" stroke-width="1"/>
+  <text x="740" y="205" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#378ADD">80/20 Stratified Split</text>
 
   <!-- Arrow 2→3 -->
-  <line x1="268" y1="90" x2="342" y2="90" stroke="#5DCAA5" stroke-width="2" marker-end="url(#pArrow)"/>
+  <line x1="430" y1="224" x2="430" y2="244" stroke="#378ADD" stroke-width="2" marker-end="url(#arrowB)"/>
 
-  <!-- Step 3 -->
-  <circle cx="380" cy="90" r="36" fill="url(#step3g)" stroke="#8b5cf6" stroke-width="2"/>
-  <text x="380" y="84" text-anchor="middle" font-family="sans-serif" font-size="20">⚖️</text>
-  <text x="380" y="103" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="white">BALANCE</text>
-  <text x="380" y="145" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">StandardScaler</text>
-  <text x="380" y="158" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">SMOTE oversample</text>
+  <!-- STAGE 3: FEATURE ENGINEERING (Pima only) -->
+  <rect x="30" y="246" width="800" height="58" rx="10" fill="#1a0d2a" stroke="#7F77DD" stroke-width="1.5"/>
+  <rect x="30" y="246" width="5" height="58" rx="3" fill="#7F77DD"/>
+  <text x="58" y="268" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" fill="#7F77DD" letter-spacing="1">STAGE 3 · FEATURE ENGINEERING  <tspan fill="#4a5568" font-weight="400">(Pima only · 8 → 16 features)</tspan></text>
+  <rect x="58" y="276" width="110" height="20" rx="4" fill="#1a0a2d" stroke="#7F77DD" stroke-width="0.8"/>
+  <text x="113" y="290" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#7F77DD">glucose × BMI</text>
+  <rect x="178" y="276" width="110" height="20" rx="4" fill="#1a0a2d" stroke="#7F77DD" stroke-width="0.8"/>
+  <text x="233" y="290" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#7F77DD">BP × Age</text>
+  <rect x="298" y="276" width="110" height="20" rx="4" fill="#1a0a2d" stroke="#7F77DD" stroke-width="0.8"/>
+  <text x="353" y="290" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#7F77DD">Insulin Sensitivity</text>
+  <rect x="418" y="276" width="110" height="20" rx="4" fill="#1a0a2d" stroke="#7F77DD" stroke-width="0.8"/>
+  <text x="473" y="290" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#7F77DD">WHO BMI Bins</text>
+  <rect x="538" y="276" width="110" height="20" rx="4" fill="#1a0a2d" stroke="#7F77DD" stroke-width="0.8"/>
+  <text x="593" y="290" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#7F77DD">Glucose Bins</text>
+  <rect x="658" y="276" width="156" height="20" rx="4" fill="#1a0a2d" stroke="#7F77DD" stroke-width="0.8"/>
+  <text x="736" y="290" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#7F77DD">+3 more interactions</text>
 
   <!-- Arrow 3→4 -->
-  <line x1="418" y1="90" x2="492" y2="90" stroke="#5DCAA5" stroke-width="2" marker-end="url(#pArrow)"/>
+  <line x1="430" y1="304" x2="430" y2="322" stroke="#7F77DD" stroke-width="2" marker-end="url(#arrowP)"/>
 
-  <!-- Step 4 -->
-  <circle cx="530" cy="90" r="36" fill="url(#step4g)" stroke="#f59e0b" stroke-width="2"/>
-  <text x="530" y="84" text-anchor="middle" font-family="sans-serif" font-size="20">🏋️</text>
-  <text x="530" y="103" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="white">TRAIN</text>
-  <text x="530" y="145" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">4 classifiers</text>
-  <text x="530" y="158" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">Stratified 80/20</text>
+  <!-- STAGE 4: MODEL TRAINING -->
+  <rect x="30" y="324" width="800" height="72" rx="10" fill="#1a1a0a" stroke="#EF9F27" stroke-width="1.5"/>
+  <rect x="30" y="324" width="5" height="72" rx="3" fill="#EF9F27"/>
+  <text x="58" y="348" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" fill="#EF9F27" letter-spacing="1">STAGE 4 · MODEL TRAINING + OPTUNA TUNING</text>
+  <rect x="58" y="358" width="162" height="28" rx="6" fill="#1a1400" stroke="#EF9F27" stroke-width="1"/>
+  <text x="139" y="377" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#EF9F27">Logistic Regression</text>
+  <rect x="232" y="358" width="162" height="28" rx="6" fill="#1a1400" stroke="#EF9F27" stroke-width="1"/>
+  <text x="313" y="377" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#EF9F27">Random Forest</text>
+  <rect x="406" y="358" width="162" height="28" rx="6" fill="#1a1400" stroke="#EF9F27" stroke-width="1"/>
+  <text x="487" y="377" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#EF9F27">XGBoost (GPU)</text>
+  <rect x="580" y="358" width="162" height="28" rx="6" fill="#1a1400" stroke="#EF9F27" stroke-width="1"/>
+  <text x="661" y="377" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#EF9F27">LightGBM</text>
 
   <!-- Arrow 4→5 -->
-  <line x1="568" y1="90" x2="642" y2="90" stroke="#5DCAA5" stroke-width="2" marker-end="url(#pArrow)"/>
+  <line x1="430" y1="396" x2="430" y2="414" stroke="#EF9F27" stroke-width="2" marker-end="url(#arrowO)"/>
 
-  <!-- Step 5 -->
-  <circle cx="680" cy="90" r="36" fill="url(#step5g)" stroke="#10b981" stroke-width="2"/>
-  <text x="680" y="84" text-anchor="middle" font-family="sans-serif" font-size="20">🔬</text>
-  <text x="680" y="103" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="white">TUNE</text>
-  <text x="680" y="145" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">Optuna TPE</text>
-  <text x="680" y="158" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">50 trials</text>
+  <!-- STAGE 5: DEPLOYMENT -->
+  <rect x="30" y="416" width="800" height="58" rx="10" fill="#1a0d12" stroke="#D85A30" stroke-width="1.5"/>
+  <rect x="30" y="416" width="5" height="58" rx="3" fill="#D85A30"/>
+  <text x="58" y="438" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" fill="#D85A30" letter-spacing="1">STAGE 5 · EVALUATION + GRADIO DEPLOYMENT</text>
+  <rect x="58" y="446" width="150" height="20" rx="4" fill="#2d0a0a" stroke="#D85A30" stroke-width="0.8"/>
+  <text x="133" y="460" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#D85A30">ROC-AUC · F1 · Sens/Spec</text>
+  <rect x="222" y="446" width="150" height="20" rx="4" fill="#2d0a0a" stroke="#D85A30" stroke-width="0.8"/>
+  <text x="297" y="460" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#D85A30">Confusion Matrices</text>
+  <rect x="386" y="446" width="150" height="20" rx="4" fill="#2d0a0a" stroke="#D85A30" stroke-width="0.8"/>
+  <text x="461" y="460" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#D85A30">Feature Importance</text>
+  <rect x="550" y="446" width="150" height="20" rx="4" fill="#2d0a0a" stroke="#D85A30" stroke-width="0.8"/>
+  <text x="625" y="460" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#D85A30">3-Tab Gradio App</text>
+  <rect x="714" y="446" width="106" height="20" rx="4" fill="#2d0a0a" stroke="#D85A30" stroke-width="0.8"/>
+  <text x="767" y="460" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#D85A30">Public Live Link</text>
 
-  <!-- Arrow 5→6 -->
-  <line x1="718" y1="90" x2="790" y2="90" stroke="#5DCAA5" stroke-width="2" marker-end="url(#pArrow)"/>
-
-  <!-- Step 6 -->
-  <circle cx="820" cy="90" r="36" fill="#0e9f6e" stroke="#5DCAA5" stroke-width="2.5"/>
-  <text x="820" y="84" text-anchor="middle" font-family="sans-serif" font-size="20">🚀</text>
-  <text x="820" y="103" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="white">DEPLOY</text>
-  <text x="820" y="145" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">Gradio UI</text>
-  <text x="820" y="158" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">Public link</text>
-
-  <!-- Medical metrics legend -->
-  <rect x="60" y="195" width="740" height="84" fill="#161b22" rx="10" stroke="#21262d" stroke-width="1"/>
-  <text x="430" y="218" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#e6edf3">📊 Evaluation Metrics — Why Each Matters Clinically</text>
-
-  <rect x="80" y="226" width="160" height="40" fill="#1f2937" rx="6"/>
-  <text x="160" y="242" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#60a5fa">ROC-AUC</text>
-  <text x="160" y="258" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">Overall discriminability</text>
-
-  <rect x="260" y="226" width="160" height="40" fill="#1f2937" rx="6"/>
-  <text x="340" y="242" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#34d399">Sensitivity</text>
-  <text x="340" y="258" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">Catch true positives</text>
-
-  <rect x="440" y="226" width="160" height="40" fill="#1f2937" rx="6"/>
-  <text x="520" y="242" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#f87171">Specificity</text>
-  <text x="520" y="258" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">Avoid false alarms</text>
-
-  <rect x="620" y="226" width="160" height="40" fill="#1f2937" rx="6"/>
-  <text x="700" y="242" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#fbbf24">F1 Score</text>
-  <text x="700" y="258" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#8b949e">Precision-recall balance</text>
+  <!-- Animated flow line -->
+  <line x1="35" y1="500" x2="825" y2="500" stroke="#1e2433" stroke-width="1"/>
+  <rect x="35" y="497" width="60" height="6" rx="3" fill="#5DCAA5" opacity="0.7">
+    <animate attributeName="x" values="35;765;35" dur="4s" repeatCount="indefinite"/>
+  </rect>
+  <text x="430" y="515" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#4a5568">data flows through pipeline · 5 stages · end-to-end reproducible</text>
 </svg>
 
 </div>
 
 ---
 
-## 📈 Results & Leaderboard
+## 📊 Model Performance
 
 <div align="center">
 
-<!-- RESULTS SVG — leaderboard bars -->
-<svg width="860" height="380" viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="barTeal" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#5DCAA5"/><stop offset="100%" style="stop-color:#378ADD"/>
-    </linearGradient>
-    <linearGradient id="barCoral" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#D85A30"/><stop offset="100%" style="stop-color:#7F77DD"/>
-    </linearGradient>
-    <linearGradient id="barBlue" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#378ADD"/><stop offset="100%" style="stop-color:#5DCAA5"/>
-    </linearGradient>
-  </defs>
-  <rect width="860" height="380" fill="#0d1117" rx="14"/>
-  <text x="430" y="26" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#e6edf3">🏆 Model Leaderboard — Best per Dataset (ROC-AUC)</text>
+<svg width="860" height="320" viewBox="0 0 860 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="860" height="320" rx="14" fill="#0a0d14" stroke="#1e2433" stroke-width="1"/>
+  <text x="430" y="28" font-family="'Segoe UI',sans-serif" font-size="14" font-weight="700" text-anchor="middle" fill="#e2e8f0" letter-spacing="1">LEADERBOARD · ALL MODELS · ALL DATASETS</text>
+  <line x1="40" y1="38" x2="820" y2="38" stroke="#1e2433" stroke-width="1"/>
 
-  <!-- Y-axis labels -->
-  <text x="30" y="60" font-family="sans-serif" font-size="9" fill="#4d5566">1.00</text>
-  <text x="30" y="110" font-family="sans-serif" font-size="9" fill="#4d5566">0.95</text>
-  <text x="30" y="160" font-family="sans-serif" font-size="9" fill="#4d5566">0.90</text>
-  <text x="30" y="210" font-family="sans-serif" font-size="9" fill="#4d5566">0.85</text>
-  <text x="30" y="260" font-family="sans-serif" font-size="9" fill="#4d5566">0.80</text>
+  <!-- Header row -->
+  <rect x="40" y="48" width="780" height="26" rx="4" fill="#111827"/>
+  <text x="120" y="66" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#718096" letter-spacing="1">DATASET</text>
+  <text x="270" y="66" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#718096" letter-spacing="1">MODEL</text>
+  <text x="420" y="66" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#718096" letter-spacing="1">ROC-AUC</text>
+  <text x="520" y="66" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#718096" letter-spacing="1">F1</text>
+  <text x="620" y="66" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#718096" letter-spacing="1">SENSITIVITY</text>
+  <text x="740" y="66" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#718096" letter-spacing="1">SPECIFICITY</text>
 
-  <!-- Grid lines -->
-  <line x1="55" y1="56" x2="830" y2="56" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3"/>
-  <line x1="55" y1="106" x2="830" y2="106" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3"/>
-  <line x1="55" y1="156" x2="830" y2="156" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3"/>
-  <line x1="55" y1="206" x2="830" y2="156" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3"/>
-  <line x1="55" y1="256" x2="830" y2="256" stroke="#21262d" stroke-width="1" stroke-dasharray="3,3"/>
-
-  <!-- Baseline = 0.80, scale: 200px per 0.20 = 1000px per 1.0 -->
-  <!-- AUC 0.979 → height = (0.979-0.80)*1000 = 179 -->
-  <!-- AUC 0.958 → height = (0.958-0.80)*1000 = 158 -->
-  <!-- AUC 0.838 → height = (0.838-0.80)*1000 = 38  -->
-  <!-- base y = 256 -->
-
-  <!-- Dataset 1 group: Diabetes-Large -->
-  <!-- LR 0.962 → 162 -->
-  <rect x="70" y="94" width="50" height="162" fill="#378ADD" rx="4" opacity="0.7"/>
-  <text x="95" y="90" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#60a5fa">0.962</text>
-  <!-- RF 0.974 → 174 -->
-  <rect x="128" y="82" width="50" height="174" fill="#1D9E75" rx="4" opacity="0.7"/>
-  <text x="153" y="78" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#6ee7b7">0.974</text>
-  <!-- XGB 0.978 → 178 -->
-  <rect x="186" y="78" width="50" height="178" fill="#D85A30" rx="4" opacity="0.7"/>
-  <text x="211" y="74" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#fca5a5">0.978</text>
-  <!-- LGBM 0.979 → 179 (winner) -->
-  <rect x="244" y="77" width="50" height="179" fill="url(#barTeal)" rx="4"/>
-  <text x="269" y="73" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#5DCAA5">0.979 🏆</text>
-
-  <text x="195" y="276" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#8b949e">🩸 Diabetes-Large</text>
-
-  <!-- Dataset 2 group: Heart-Cleveland -->
-  <!-- LR 0.954 → 154 (winner) -->
-  <rect x="350" y="102" width="50" height="154" fill="url(#barCoral)" rx="4"/>
-  <text x="375" y="98" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#D85A30">0.954 🏆</text>
-  <!-- RF 0.941 → 141 -->
-  <rect x="408" y="115" width="50" height="141" fill="#1D9E75" rx="4" opacity="0.7"/>
-  <text x="433" y="111" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#6ee7b7">0.941</text>
-  <!-- XGB 0.934 → 134 -->
-  <rect x="466" y="122" width="50" height="134" fill="#D85A30" rx="4" opacity="0.7"/>
-  <text x="491" y="118" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#fca5a5">0.934</text>
-  <!-- LGBM 0.949 → 149 -->
-  <rect x="524" y="107" width="50" height="149" fill="#7F77DD" rx="4" opacity="0.7"/>
-  <text x="549" y="103" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#c4b5fd">0.949</text>
-
-  <text x="462" y="276" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#8b949e">❤️ Heart-Cleveland</text>
-
-  <!-- Dataset 3 group: Pima -->
-  <!-- LR 0.811 → 11 -->
-  <rect x="630" y="245" width="50" height="11" fill="#378ADD" rx="4" opacity="0.7"/>
-  <text x="655" y="241" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#60a5fa">0.811</text>
-  <!-- RF 0.809 → 9 -->
-  <rect x="688" y="247" width="50" height="9" fill="#1D9E75" rx="4" opacity="0.7"/>
-  <text x="713" y="243" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#6ee7b7">0.809</text>
-  <!-- XGB 0.838 → 38 (winner) -->
-  <rect x="746" y="218" width="50" height="38" fill="url(#barBlue)" rx="4"/>
-  <text x="771" y="214" text-anchor="middle" font-family="sans-serif" font-size="9" font-weight="700" fill="#378ADD">0.838 🏆</text>
-  <!-- LGBM 0.816 → 16 -->
-
-  <text x="712" y="276" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#8b949e">🧬 Pima Indians</text>
-
-  <!-- Legend -->
-  <rect x="55" y="295" width="750" height="70" fill="#161b22" rx="8" stroke="#21262d" stroke-width="1"/>
-  <text x="430" y="313" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#e6edf3">Key Insight</text>
-
-  <rect x="75" y="320" width="10" height="10" fill="#378ADD" rx="2"/>
-  <text x="93" y="330" font-family="sans-serif" font-size="9" fill="#8b949e">Logistic Reg.</text>
-
-  <rect x="180" y="320" width="10" height="10" fill="#1D9E75" rx="2"/>
-  <text x="198" y="330" font-family="sans-serif" font-size="9" fill="#8b949e">Random Forest</text>
-
-  <rect x="295" y="320" width="10" height="10" fill="#D85A30" rx="2"/>
-  <text x="313" y="330" font-family="sans-serif" font-size="9" fill="#8b949e">XGBoost</text>
-
-  <rect x="390" y="320" width="10" height="10" fill="#7F77DD" rx="2"/>
-  <text x="408" y="330" font-family="sans-serif" font-size="9" fill="#8b949e">LightGBM</text>
-
-  <text x="430" y="352" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#6b7280">
-    Simpler models win on small data (Heart: LR beats XGB). Boosting dominates at scale (Diabetes-Large: LGBM 0.979).
-  </text>
-</svg>
-
-</div>
-
-### Detailed Metrics Table
-
-| Dataset | Model | AUC | F1 | Sensitivity | Specificity |
-|:---|:---|:---:|:---:|:---:|:---:|
-| 🩸 Diabetes-Large | **LightGBM** *(tuned)* | **0.979** | 0.804 | 0.709 | 0.995 |
-| ❤️ Heart-Cleveland | **Logistic Regression** *(tuned)* | **0.958** | 0.902 | 0.821 | 1.000 |
-| 🧬 Diabetes-Pima | **XGBoost + Feat. Eng.** *(tuned)* | **0.838** | 0.649 | 0.685 | 0.770 |
-
-> **Sensitivity** = fraction of sick patients correctly identified. **Specificity** = fraction of healthy patients correctly cleared. For medical screening, sensitivity is the priority.
-
----
-
-## ⚙️ Feature Engineering
-
-<div align="center">
-
-<!-- FEATURE ENGINEERING SVG -->
-<svg width="860" height="290" viewBox="0 0 860 290" xmlns="http://www.w3.org/2000/svg">
-  <rect width="860" height="290" fill="#0d1117" rx="14"/>
-  <text x="430" y="26" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="700" fill="#e6edf3">🧬 Pima Indians — Feature Engineering (8 → 16 Features)</text>
-
-  <!-- Original features column -->
-  <rect x="20" y="40" width="180" height="230" fill="#161b22" rx="10" stroke="#1d4ed8" stroke-width="1.5"/>
-  <rect x="20" y="40" width="180" height="30" fill="#1d4ed8" rx="8"/>
-  <rect x="20" y="58" width="180" height="12" fill="#1d4ed8"/>
-  <text x="110" y="61" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">Original 8 Features</text>
-
-  <g font-family="sans-serif" font-size="10" fill="#8b949e">
-    <text x="36" y="90">📊 Pregnancies</text>
-    <text x="36" y="108">🩸 Glucose</text>
-    <text x="36" y="126">💉 Blood Pressure</text>
-    <text x="36" y="144">📏 Skin Thickness</text>
-    <text x="36" y="162">💊 Insulin</text>
-    <text x="36" y="180">⚖️  BMI</text>
-    <text x="36" y="198">🧬 Diabetes Pedigree</text>
-    <text x="36" y="216">🎂 Age</text>
-  </g>
-
-  <!-- Arrow -->
-  <line x1="200" y1="155" x2="255" y2="155" stroke="#5DCAA5" stroke-width="2.5" marker-end="url(#arrowTeal)"/>
-  <text x="228" y="148" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#5DCAA5">×2</text>
-
-  <!-- Engineered features column -->
-  <rect x="258" y="40" width="580" height="230" fill="#161b22" rx="10" stroke="#5DCAA5" stroke-width="1.5"/>
-  <rect x="258" y="40" width="580" height="30" fill="#057a55" rx="8"/>
-  <rect x="258" y="58" width="580" height="12" fill="#057a55"/>
-  <text x="548" y="61" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="white">8 Engineered Features Added</text>
-
-  <!-- Feature cards 2×4 grid -->
-  <!-- Row 1 -->
-  <rect x="272" y="76" width="132" height="60" fill="#0e2a1e" rx="7" stroke="#5DCAA5" stroke-width="1"/>
-  <text x="338" y="95" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#5DCAA5">glucose × bmi</text>
-  <text x="338" y="110" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">Insulin resistance</text>
-  <text x="338" y="124" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">proxy</text>
-
-  <rect x="416" y="76" width="132" height="60" fill="#2a1a0e" rx="7" stroke="#f59e0b" stroke-width="1"/>
-  <text x="482" y="95" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#fbbf24">bp × age</text>
-  <text x="482" y="110" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">Cardiovascular</text>
-  <text x="482" y="124" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">stress score</text>
-
-  <rect x="560" y="76" width="132" height="60" fill="#1a0e2a" rx="7" stroke="#8b5cf6" stroke-width="1"/>
-  <text x="626" y="95" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#c4b5fd">glucose / bmi</text>
-  <text x="626" y="110" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">Thin-person</text>
-  <text x="626" y="124" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">glucose risk</text>
-
-  <rect x="704" y="76" width="120" height="60" fill="#0e1a2a" rx="7" stroke="#3b82f6" stroke-width="1"/>
-  <text x="764" y="95" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#60a5fa">skin / bmi</text>
-  <text x="764" y="110" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">Adiposity</text>
-  <text x="764" y="124" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">proxy</text>
+  <!-- Row 1 - winner -->
+  <rect x="40" y="80" width="780" height="30" rx="4" fill="#0d2a0d" stroke="#5DCAA5" stroke-width="0.5"/>
+  <text x="52" y="100" font-family="'Segoe UI',sans-serif" font-size="10" fill="#EF9F27">🏆</text>
+  <text x="120" y="100" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#5DCAA5" font-weight="600">Diabetes-Large</text>
+  <text x="270" y="100" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#e2e8f0">LightGBM</text>
+  <!-- AUC bar -->
+  <rect x="370" y="88" width="97.9" height="14" rx="3" fill="#5DCAA5" opacity="0.85"/>
+  <text x="478" y="100" font-family="'Segoe UI',sans-serif" font-size="11" fill="#5DCAA5" font-weight="700">0.979</text>
+  <rect x="490" y="88" width="80.4" height="14" rx="3" fill="#378ADD" opacity="0.7"/>
+  <text x="577" y="100" font-family="'Segoe UI',sans-serif" font-size="11" fill="#378ADD">0.804</text>
+  <rect x="588" y="88" width="70.9" height="14" rx="3" fill="#7F77DD" opacity="0.7"/>
+  <text x="664" y="100" font-family="'Segoe UI',sans-serif" font-size="11" fill="#7F77DD">0.709</text>
+  <rect x="690" y="88" width="99.5" height="14" rx="3" fill="#EF9F27" opacity="0.7"/>
+  <text x="795" y="100" font-family="'Segoe UI',sans-serif" font-size="11" fill="#EF9F27">0.995</text>
 
   <!-- Row 2 -->
-  <rect x="272" y="150" width="132" height="60" fill="#0e2a1e" rx="7" stroke="#10b981" stroke-width="1"/>
-  <text x="338" y="169" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#34d399">insulin / glucose</text>
-  <text x="338" y="184" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">Sensitivity</text>
-  <text x="338" y="198" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">indicator</text>
+  <rect x="40" y="116" width="780" height="30" rx="4" fill="#111827"/>
+  <text x="120" y="136" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#5DCAA5">Diabetes-Large</text>
+  <text x="270" y="136" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#e2e8f0">XGBoost</text>
+  <rect x="370" y="124" width="97.8" height="14" rx="3" fill="#5DCAA5" opacity="0.55"/>
+  <text x="478" y="136" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">0.978</text>
+  <rect x="490" y="124" width="78" height="14" rx="3" fill="#378ADD" opacity="0.5"/>
+  <text x="577" y="136" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">0.780</text>
+  <rect x="588" y="124" width="76.2" height="14" rx="3" fill="#7F77DD" opacity="0.5"/>
+  <text x="664" y="136" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">0.762</text>
+  <rect x="690" y="124" width="98.2" height="14" rx="3" fill="#EF9F27" opacity="0.5"/>
+  <text x="795" y="136" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">0.982</text>
 
-  <rect x="416" y="150" width="132" height="60" fill="#2a200e" rx="7" stroke="#d97706" stroke-width="1"/>
-  <text x="482" y="169" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#fbbf24">age × preg</text>
-  <text x="482" y="184" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">Older mother</text>
-  <text x="482" y="198" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">risk amplifier</text>
+  <!-- Row 3 - winner -->
+  <rect x="40" y="152" width="780" height="30" rx="4" fill="#0a1a2d" stroke="#378ADD" stroke-width="0.5"/>
+  <text x="52" y="172" font-family="'Segoe UI',sans-serif" font-size="10" fill="#EF9F27">🏆</text>
+  <text x="120" y="172" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#378ADD" font-weight="600">Heart-Cleveland</text>
+  <text x="270" y="172" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#e2e8f0">Logistic Regression</text>
+  <rect x="370" y="160" width="95.4" height="14" rx="3" fill="#378ADD" opacity="0.85"/>
+  <text x="478" y="172" font-family="'Segoe UI',sans-serif" font-size="11" fill="#378ADD" font-weight="700">0.954</text>
+  <rect x="490" y="160" width="90.2" height="14" rx="3" fill="#378ADD" opacity="0.7"/>
+  <text x="577" y="172" font-family="'Segoe UI',sans-serif" font-size="11" fill="#378ADD">0.902</text>
+  <rect x="588" y="160" width="82.1" height="14" rx="3" fill="#7F77DD" opacity="0.7"/>
+  <text x="664" y="172" font-family="'Segoe UI',sans-serif" font-size="11" fill="#7F77DD">0.821</text>
+  <rect x="690" y="160" width="100" height="14" rx="3" fill="#EF9F27" opacity="0.9"/>
+  <text x="795" y="172" font-family="'Segoe UI',sans-serif" font-size="11" fill="#EF9F27" font-weight="700">1.000</text>
 
-  <rect x="560" y="150" width="132" height="60" fill="#1a0e0e" rx="7" stroke="#ef4444" stroke-width="1"/>
-  <text x="626" y="169" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#f87171">BMI bin</text>
-  <text x="626" y="184" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">WHO category</text>
-  <text x="626" y="198" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">0/1/2/3</text>
+  <!-- Row 4 -->
+  <rect x="40" y="188" width="780" height="30" rx="4" fill="#111827"/>
+  <text x="120" y="208" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#378ADD">Heart-Cleveland</text>
+  <text x="270" y="208" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#e2e8f0">LightGBM</text>
+  <rect x="370" y="196" width="94.9" height="14" rx="3" fill="#378ADD" opacity="0.55"/>
+  <text x="478" y="208" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">0.949</text>
+  <rect x="490" y="196" width="85.2" height="14" rx="3" fill="#378ADD" opacity="0.5"/>
+  <text x="577" y="208" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">0.852</text>
+  <rect x="588" y="196" width="82.1" height="14" rx="3" fill="#7F77DD" opacity="0.5"/>
+  <text x="664" y="208" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">0.821</text>
+  <rect x="690" y="196" width="90.6" height="14" rx="3" fill="#EF9F27" opacity="0.5"/>
+  <text x="795" y="208" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">0.906</text>
 
-  <rect x="704" y="150" width="120" height="60" fill="#0e1a1a" rx="7" stroke="#06b6d4" stroke-width="1"/>
-  <text x="764" y="169" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#22d3ee">glucose bin</text>
-  <text x="764" y="184" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">Clinical threshold</text>
-  <text x="764" y="198" text-anchor="middle" font-family="sans-serif" font-size="8.5" fill="#6b7280">normal/pre/diabetic</text>
+  <!-- Row 5 - winner -->
+  <rect x="40" y="224" width="780" height="30" rx="4" fill="#1a0d2a" stroke="#7F77DD" stroke-width="0.5"/>
+  <text x="52" y="244" font-family="'Segoe UI',sans-serif" font-size="10" fill="#EF9F27">🏆</text>
+  <text x="120" y="244" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#7F77DD" font-weight="600">Diabetes-Pima</text>
+  <text x="270" y="244" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#e2e8f0">XGBoost (tuned)</text>
+  <rect x="370" y="232" width="83.8" height="14" rx="3" fill="#7F77DD" opacity="0.85"/>
+  <text x="478" y="244" font-family="'Segoe UI',sans-serif" font-size="11" fill="#7F77DD" font-weight="700">0.838</text>
+  <rect x="490" y="232" width="64.9" height="14" rx="3" fill="#7F77DD" opacity="0.7"/>
+  <text x="577" y="244" font-family="'Segoe UI',sans-serif" font-size="11" fill="#7F77DD">0.649</text>
+  <rect x="588" y="232" width="68.5" height="14" rx="3" fill="#7F77DD" opacity="0.7"/>
+  <text x="664" y="244" font-family="'Segoe UI',sans-serif" font-size="11" fill="#7F77DD">0.685</text>
+  <rect x="690" y="232" width="77" height="14" rx="3" fill="#EF9F27" opacity="0.7"/>
+  <text x="795" y="244" font-family="'Segoe UI',sans-serif" font-size="11" fill="#EF9F27">0.770</text>
 
-  <!-- Result bar -->
-  <rect x="272" y="224" width="552" height="32" fill="#0e2a1e" rx="6" stroke="#5DCAA5" stroke-width="1"/>
-  <text x="548" y="244" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#5DCAA5">
-    ✅ AUC improved:  0.823 → 0.838   (+0.015)   with XGBoost + Stacking Ensemble
-  </text>
+  <!-- Row 6 -->
+  <rect x="40" y="260" width="780" height="30" rx="4" fill="#111827"/>
+  <text x="120" y="280" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#7F77DD">Diabetes-Pima</text>
+  <text x="270" y="280" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#e2e8f0">LightGBM</text>
+  <rect x="370" y="268" width="81.6" height="14" rx="3" fill="#7F77DD" opacity="0.55"/>
+  <text x="478" y="280" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">0.816</text>
+  <rect x="490" y="268" width="63.7" height="14" rx="3" fill="#7F77DD" opacity="0.5"/>
+  <text x="577" y="280" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">0.637</text>
+  <rect x="588" y="268" width="66.7" height="14" rx="3" fill="#7F77DD" opacity="0.5"/>
+  <text x="664" y="280" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">0.667</text>
+  <rect x="690" y="268" width="77" height="14" rx="3" fill="#EF9F27" opacity="0.5"/>
+  <text x="795" y="280" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">0.770</text>
+
+  <!-- Legend -->
+  <rect x="370" y="300" width="12" height="10" rx="2" fill="#5DCAA5"/>
+  <text x="386" y="310" font-family="'Segoe UI',sans-serif" font-size="10" fill="#718096">ROC-AUC</text>
+  <rect x="460" y="300" width="12" height="10" rx="2" fill="#378ADD"/>
+  <text x="476" y="310" font-family="'Segoe UI',sans-serif" font-size="10" fill="#718096">F1</text>
+  <rect x="510" y="300" width="12" height="10" rx="2" fill="#7F77DD"/>
+  <text x="526" y="310" font-family="'Segoe UI',sans-serif" font-size="10" fill="#718096">Sensitivity</text>
+  <rect x="610" y="300" width="12" height="10" rx="2" fill="#EF9F27"/>
+  <text x="626" y="310" font-family="'Segoe UI',sans-serif" font-size="10" fill="#718096">Specificity</text>
+  <text x="52" y="310" font-family="'Segoe UI',sans-serif" font-size="10" fill="#4a5568">🏆 = best per dataset (by AUC) · bar width proportional to score</text>
 </svg>
 
 </div>
 
 ---
 
-## 🚀 Quick Start
+## ⚙️ Tech Stack
+
+<div align="center">
+
+<svg width="860" height="130" viewBox="0 0 860 130" xmlns="http://www.w3.org/2000/svg">
+  <rect width="860" height="130" rx="12" fill="#0a0d14" stroke="#1e2433" stroke-width="1"/>
+
+  <!-- Category: Data -->
+  <text x="80" y="24" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#718096" letter-spacing="1">DATA</text>
+  <rect x="20" y="32" width="120" height="28" rx="6" fill="#0d2a1a" stroke="#5DCAA5" stroke-width="1"/>
+  <text x="80" y="51" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#5DCAA5">pandas · numpy</text>
+  <rect x="20" y="66" width="120" height="28" rx="6" fill="#0d2a1a" stroke="#5DCAA5" stroke-width="1"/>
+  <text x="80" y="85" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#5DCAA5">imbalanced-learn</text>
+  <rect x="20" y="100" width="120" height="24" rx="6" fill="#0d2a1a" stroke="#5DCAA5" stroke-width="1"/>
+  <text x="80" y="117" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#5DCAA5">SMOTE</text>
+
+  <!-- Divider -->
+  <line x1="158" y1="20" x2="158" y2="120" stroke="#1e2433" stroke-width="1"/>
+
+  <!-- Category: ML -->
+  <text x="290" y="24" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#718096" letter-spacing="1">MACHINE LEARNING</text>
+  <rect x="168" y="32" width="120" height="28" rx="6" fill="#0d1a2d" stroke="#378ADD" stroke-width="1"/>
+  <text x="228" y="51" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#378ADD">scikit-learn</text>
+  <rect x="298" y="32" width="120" height="28" rx="6" fill="#0d1a2d" stroke="#378ADD" stroke-width="1"/>
+  <text x="358" y="51" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#378ADD">XGBoost (GPU)</text>
+  <rect x="168" y="66" width="120" height="28" rx="6" fill="#0d1a2d" stroke="#378ADD" stroke-width="1"/>
+  <text x="228" y="85" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#378ADD">LightGBM</text>
+  <rect x="298" y="66" width="120" height="28" rx="6" fill="#0d1a2d" stroke="#378ADD" stroke-width="1"/>
+  <text x="358" y="85" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#378ADD">Optuna (TPE)</text>
+  <rect x="168" y="100" width="250" height="24" rx="6" fill="#0d1a2d" stroke="#378ADD" stroke-width="1"/>
+  <text x="293" y="117" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#378ADD">StackingClassifier · 5-fold CV</text>
+
+  <!-- Divider -->
+  <line x1="436" y1="20" x2="436" y2="120" stroke="#1e2433" stroke-width="1"/>
+
+  <!-- Category: Viz -->
+  <text x="546" y="24" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#718096" letter-spacing="1">VISUALIZATION</text>
+  <rect x="446" y="32" width="120" height="28" rx="6" fill="#1a0d2a" stroke="#7F77DD" stroke-width="1"/>
+  <text x="506" y="51" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#7F77DD">matplotlib</text>
+  <rect x="576" y="32" width="120" height="28" rx="6" fill="#1a0d2a" stroke="#7F77DD" stroke-width="1"/>
+  <text x="636" y="51" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#7F77DD">seaborn</text>
+  <rect x="446" y="66" width="250" height="28" rx="6" fill="#1a0d2a" stroke="#7F77DD" stroke-width="1"/>
+  <text x="571" y="85" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#7F77DD">ROC · Confusion · Heatmaps</text>
+  <rect x="446" y="100" width="250" height="24" rx="6" fill="#1a0d2a" stroke="#7F77DD" stroke-width="1"/>
+  <text x="571" y="117" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#7F77DD">Feature Importance · KDE Dist.</text>
+
+  <!-- Divider -->
+  <line x1="714" y1="20" x2="714" y2="120" stroke="#1e2433" stroke-width="1"/>
+
+  <!-- Category: Deploy -->
+  <text x="787" y="24" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#718096" letter-spacing="1">DEPLOYMENT</text>
+  <rect x="724" y="32" width="120" height="28" rx="6" fill="#2d0a0a" stroke="#D85A30" stroke-width="1"/>
+  <text x="784" y="51" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#D85A30">Gradio</text>
+  <rect x="724" y="66" width="120" height="28" rx="6" fill="#2d0a0a" stroke="#D85A30" stroke-width="1"/>
+  <text x="784" y="85" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#D85A30">Kaggle GPU P100</text>
+  <rect x="724" y="100" width="120" height="24" rx="6" fill="#2d0a0a" stroke="#D85A30" stroke-width="1"/>
+  <text x="784" y="117" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#D85A30">Public Share Link</text>
+</svg>
+
+</div>
+
+---
+
+## 🗺️ Repository Structure
+
+```
+medrisk-classifier/
+│
+├── 📓 medrisk_classifier.ipynb     ← Main Kaggle notebook (all 5 snippets)
+│
+├── 📊 outputs/
+│   ├── class_balance.png           ← EDA: class distribution across datasets
+│   ├── dist_*.png                  ← KDE feature distributions per dataset
+│   ├── corr_*.png                  ← Correlation heatmaps
+│   ├── smote_balance.png           ← Before/after SMOTE comparison
+│   ├── target_correlation.png      ← Pearson r with target per dataset
+│   ├── metrics_heatmap.png         ← All models × all metrics
+│   ├── roc_curves.png              ← ROC curves overlaid per dataset
+│   ├── confusion_matrices.png      ← Best model per dataset
+│   ├── feature_importance.png      ← RF + LightGBM importance
+│   ├── tuned_vs_baseline.png       ← Optuna improvement
+│   ├── optuna_history.png          ← Trial convergence plots
+│   ├── pima_progression.png        ← Baseline → Engineered → Stacked
+│   └── pima_feature_importance_eng.png
+│
+└── 📄 README.md
+```
+
+---
+
+## 🚀 Reproduce Locally
 
 ```bash
 # 1. Clone the repository
@@ -705,146 +611,231 @@ git clone https://github.com/YOUR_USERNAME/medrisk-classifier.git
 cd medrisk-classifier
 
 # 2. Install dependencies
-pip install -r requirements.txt
+pip install pandas numpy matplotlib seaborn scikit-learn \
+            imbalanced-learn xgboost lightgbm optuna gradio
 
 # 3. Add datasets (Kaggle API)
-kaggle datasets download mathchi/diabetes-data-set
+kaggle datasets download iammustafatz/diabetes-prediction-dataset
 kaggle datasets download cherngs/heart-disease-cleveland-uci
-kaggle datasets download uciml/pima-indians-diabetes-database
+kaggle datasets download -d uciml/pima-indians-diabetes-database
 
-# 4. Run on Kaggle (recommended — GPU included)
-# Open notebook on Kaggle and click "Run All"
-
-# 5. Or run locally
-jupyter notebook MedRisk_Classifier.ipynb
-```
-
-### Requirements
-
-```
-numpy>=1.24
-pandas>=2.0
-scikit-learn>=1.3
-xgboost>=2.0
-lightgbm>=4.0
-optuna>=3.4
-imbalanced-learn>=0.11
-gradio>=4.0
-matplotlib>=3.7
-seaborn>=0.12
+# 4. Run on Kaggle (recommended — free GPU)
+#    Upload the notebook and enable GPU accelerator
+#    Run All → Gradio link appears in the last cell output
 ```
 
 ---
 
-## 🗂️ Project Structure
-
-```
-medrisk-classifier/
-│
-├── 📓 MedRisk_Classifier.ipynb     # Main Kaggle notebook (run this)
-│
-├── 📊 outputs/
-│   ├── class_balance.png           # Snippet 1 — class distribution
-│   ├── dist_*.png                  # Snippet 1 — feature KDE plots
-│   ├── corr_*.png                  # Snippet 1 — correlation heatmaps
-│   ├── smote_balance.png           # Snippet 2 — before/after SMOTE
-│   ├── target_correlation.png      # Snippet 2 — feature-target corr
-│   ├── metrics_heatmap.png         # Snippet 3 — model comparison
-│   ├── roc_curves.png              # Snippet 3 — ROC per dataset
-│   ├── confusion_matrices.png      # Snippet 3 — confusion matrices
-│   ├── feature_importance.png      # Snippet 3 — RF + LGBM importance
-│   ├── tuned_vs_baseline.png       # Snippet 4 — Optuna gains
-│   ├── optuna_history.png          # Snippet 4 — trial convergence
-│   └── pima_progression.png        # Snippet 4B — engineering gains
-│
-├── 📋 requirements.txt
-└── 📖 README.md
-```
-
----
-
-## 🧩 Tech Stack
+## 🧪 Feature Engineering Details
 
 <div align="center">
 
-<!-- TECH STACK SVG -->
-<svg width="860" height="140" viewBox="0 0 860 140" xmlns="http://www.w3.org/2000/svg">
-  <rect width="860" height="140" fill="#0d1117" rx="14"/>
+<svg width="860" height="260" viewBox="0 0 860 260" xmlns="http://www.w3.org/2000/svg">
+  <rect width="860" height="260" rx="12" fill="#0a0d14" stroke="#1e2433" stroke-width="1"/>
+  <text x="430" y="26" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#7F77DD" letter-spacing="1">PIMA FEATURE ENGINEERING  ·  8 → 16 FEATURES</text>
 
-  <!-- Tech pills -->
-  <!-- Python -->
-  <rect x="20" y="40" width="110" height="60" fill="#1e3a5f" rx="10" stroke="#3b82f6" stroke-width="1.5"/>
-  <text x="75" y="66" text-anchor="middle" font-family="sans-serif" font-size="22">🐍</text>
-  <text x="75" y="88" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#60a5fa">Python 3.12</text>
+  <!-- Original features box -->
+  <rect x="20" y="40" width="180" height="205" rx="10" fill="#1a0d2a" stroke="#7F77DD" stroke-width="1.5"/>
+  <text x="110" y="60" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#7F77DD">ORIGINAL (8)</text>
+  <text x="35" y="80" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">Pregnancies</text>
+  <text x="35" y="98" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">Glucose</text>
+  <text x="35" y="116" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">BloodPressure</text>
+  <text x="35" y="134" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">SkinThickness</text>
+  <text x="35" y="152" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">Insulin</text>
+  <text x="35" y="170" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">BMI</text>
+  <text x="35" y="188" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">DiabetesPedigreeFunc</text>
+  <text x="35" y="206" font-family="'Segoe UI',sans-serif" font-size="11" fill="#a0aec0">Age</text>
+  <!-- zero fix note -->
+  <rect x="30" y="216" width="160" height="20" rx="4" fill="#2d0a0a" stroke="#D85A30" stroke-width="0.8"/>
+  <text x="110" y="230" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#D85A30">⚠ zeros → median imputed</text>
 
-  <!-- XGBoost -->
-  <rect x="145" y="40" width="110" height="60" fill="#3a1e0e" rx="10" stroke="#f97316" stroke-width="1.5"/>
-  <text x="200" y="66" text-anchor="middle" font-family="sans-serif" font-size="22">⚡</text>
-  <text x="200" y="88" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#fb923c">XGBoost 2.0</text>
+  <!-- Arrow -->
+  <text x="215" y="142" font-family="'Segoe UI',sans-serif" font-size="22" fill="#7F77DD">→</text>
 
-  <!-- LightGBM -->
-  <rect x="270" y="40" width="110" height="60" fill="#0e3a1e" rx="10" stroke="#10b981" stroke-width="1.5"/>
-  <text x="325" y="66" text-anchor="middle" font-family="sans-serif" font-size="22">💡</text>
-  <text x="325" y="88" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#34d399">LightGBM 4.0</text>
+  <!-- Engineered features box -->
+  <rect x="240" y="40" width="600" height="205" rx="10" fill="#0d0a1a" stroke="#7F77DD" stroke-width="1.5"/>
+  <text x="540" y="60" font-family="'Segoe UI',sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="#7F77DD">ENGINEERED (8 new · clinical rationale)</text>
 
-  <!-- Optuna -->
-  <rect x="395" y="40" width="110" height="60" fill="#2a1a3a" rx="10" stroke="#8b5cf6" stroke-width="1.5"/>
-  <text x="450" y="66" text-anchor="middle" font-family="sans-serif" font-size="22">🔬</text>
-  <text x="450" y="88" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#a78bfa">Optuna 3.4</text>
+  <!-- 8 new feature cards, 2 columns -->
+  <rect x="256" y="70" width="274" height="40" rx="6" fill="#1a0d2a" stroke="#7F77DD" stroke-width="0.8"/>
+  <text x="393" y="86" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#e2e8f0" font-weight="600">glucose_bmi</text>
+  <text x="393" y="102" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#718096">Glucose × BMI · insulin resistance proxy</text>
 
-  <!-- Gradio -->
-  <rect x="520" y="40" width="110" height="60" fill="#3a1e0e" rx="10" stroke="#f97316" stroke-width="1.5"/>
-  <text x="575" y="66" text-anchor="middle" font-family="sans-serif" font-size="22">🎛️</text>
-  <text x="575" y="88" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#fb923c">Gradio 4.0</text>
+  <rect x="550" y="70" width="274" height="40" rx="6" fill="#1a0d2a" stroke="#7F77DD" stroke-width="0.8"/>
+  <text x="687" y="86" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#e2e8f0" font-weight="600">bp_age</text>
+  <text x="687" y="102" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#718096">BloodPressure × Age · cardiovascular stress</text>
 
-  <!-- sklearn -->
-  <rect x="645" y="40" width="110" height="60" fill="#1e3a1e" rx="10" stroke="#22c55e" stroke-width="1.5"/>
-  <text x="700" y="66" text-anchor="middle" font-family="sans-serif" font-size="22">🤖</text>
-  <text x="700" y="88" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#4ade80">scikit-learn</text>
+  <rect x="256" y="118" width="274" height="40" rx="6" fill="#1a0d2a" stroke="#7F77DD" stroke-width="0.8"/>
+  <text x="393" y="134" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#e2e8f0" font-weight="600">glucose_bmi_ratio</text>
+  <text x="393" y="150" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#718096">Glucose / BMI · thin + high glucose risk</text>
 
-  <!-- Kaggle -->
-  <rect x="770" y="40" width="70" height="60" fill="#0e1e3a" rx="10" stroke="#20beff" stroke-width="1.5"/>
-  <text x="805" y="66" text-anchor="middle" font-family="sans-serif" font-size="22">🏅</text>
-  <text x="805" y="88" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#22d3ee">Kaggle</text>
+  <rect x="550" y="118" width="274" height="40" rx="6" fill="#1a0d2a" stroke="#7F77DD" stroke-width="0.8"/>
+  <text x="687" y="134" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#e2e8f0" font-weight="600">insulin_glucose</text>
+  <text x="687" y="150" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#718096">Insulin / Glucose · sensitivity ratio</text>
 
-  <text x="430" y="120" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#4d5566">All open-source · No paid APIs · GPU-accelerated on Kaggle</text>
+  <rect x="256" y="166" width="274" height="40" rx="6" fill="#1a0d2a" stroke="#5DCAA5" stroke-width="0.8"/>
+  <text x="393" y="182" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#e2e8f0" font-weight="600">bmi_bin</text>
+  <text x="393" y="198" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#718096">WHO categories: under/normal/over/obese</text>
+
+  <rect x="550" y="166" width="274" height="40" rx="6" fill="#1a0d2a" stroke="#5DCAA5" stroke-width="0.8"/>
+  <text x="687" y="182" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#e2e8f0" font-weight="600">glucose_bin</text>
+  <text x="687" y="198" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#718096">Clinical: normal / pre-diabetic / diabetic</text>
+
+  <!-- AUC improvement tag -->
+  <rect x="350" y="218" width="380" height="20" rx="6" fill="#0d2a0d" stroke="#5DCAA5" stroke-width="0.8"/>
+  <text x="540" y="232" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#5DCAA5">📈 AUC improvement: 0.823 (baseline) → 0.838 (engineered) · +1.8%</text>
 </svg>
 
 </div>
 
 ---
 
+## 🎛️ Gradio App — Interface Preview
+
 <div align="center">
 
-<!-- FOOTER SVG -->
-<svg width="860" height="80" viewBox="0 0 860 80" xmlns="http://www.w3.org/2000/svg">
+<svg width="860" height="300" viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="appBg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#0f0c29"/>
-      <stop offset="50%" style="stop-color:#302b63"/>
-      <stop offset="100%" style="stop-color:#24243e"/>
-    </linearGradient>
-    <linearGradient id="footerLine" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#5DCAA5;stop-opacity:0"/>
-      <stop offset="30%" style="stop-color:#5DCAA5"/>
-      <stop offset="70%" style="stop-color:#378ADD"/>
-      <stop offset="100%" style="stop-color:#378ADD;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#1a1040"/>
     </linearGradient>
   </defs>
-  <rect width="860" height="80" fill="url(#footerGrad)" rx="12"/>
-  <rect x="200" y="2" width="460" height="2" fill="url(#footerLine)" rx="1"/>
-  <text x="430" y="34" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="700" fill="#e6edf3">
-    Built for GitHub Portfolio · Kaggle GPU · 100% Open Source
-  </text>
-  <text x="430" y="56" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#8b949e">
-    MedRisk Classifier · 3 Datasets · 4 Models · Optuna · Gradio · SMOTE · Feature Engineering
-  </text>
+  <rect width="860" height="300" rx="14" fill="url(#appBg)" stroke="#302b63" stroke-width="1.5"/>
+
+  <!-- Browser chrome -->
+  <rect x="0" y="0" width="860" height="36" rx="14" fill="#1a1535"/>
+  <rect x="0" y="24" width="860" height="12" fill="#1a1535"/>
+  <circle cx="22" cy="18" r="6" fill="#D85A30" opacity="0.8"/>
+  <circle cx="40" cy="18" r="6" fill="#EF9F27" opacity="0.8"/>
+  <circle cx="58" cy="18" r="6" fill="#5DCAA5" opacity="0.8"/>
+  <rect x="100" y="10" width="480" height="16" rx="8" fill="#0d0a1a"/>
+  <text x="340" y="22" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#718096">🔒 kaggle.com/your-notebook · MedRisk Classifier</text>
+
+  <!-- Tab bar -->
+  <rect x="20" y="46" width="200" height="28" rx="6" fill="#5DCAA5" opacity="0.15" stroke="#5DCAA5" stroke-width="1"/>
+  <text x="120" y="65" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#5DCAA5" font-weight="600">🩸 Diabetes Risk (Large)</text>
+  <rect x="230" y="46" width="180" height="28" rx="6" fill="none" stroke="#378ADD" stroke-width="0.5"/>
+  <text x="320" y="65" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#718096">❤️ Heart Disease Risk</text>
+  <rect x="420" y="46" width="180" height="28" rx="6" fill="none" stroke="#7F77DD" stroke-width="0.5"/>
+  <text x="510" y="65" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#718096">🧬 Diabetes Risk (Pima)</text>
+
+  <!-- Model badge -->
+  <rect x="640" y="46" width="200" height="28" rx="6" fill="#0d2a0d" stroke="#5DCAA5" stroke-width="0.5"/>
+  <text x="740" y="65" font-family="'Segoe UI',sans-serif" font-size="10" text-anchor="middle" fill="#5DCAA5">Model: LightGBM · AUC: 0.979</text>
+
+  <!-- Left panel: inputs -->
+  <text x="30" y="100" font-family="'Segoe UI',sans-serif" font-size="10" fill="#718096">Gender</text>
+  <rect x="30" y="106" width="180" height="20" rx="4" fill="#1a1535" stroke="#302b63" stroke-width="1"/>
+  <text x="40" y="120" font-family="'Segoe UI',sans-serif" font-size="10" fill="#e2e8f0">Female</text>
+  <text x="195" y="120" font-family="'Segoe UI',sans-serif" font-size="10" fill="#718096">▾</text>
+
+  <text x="30" y="138" font-family="'Segoe UI',sans-serif" font-size="10" fill="#718096">Age  <tspan fill="#5DCAA5">45</tspan></text>
+  <rect x="30" y="144" width="180" height="8" rx="4" fill="#1a1535" stroke="#302b63" stroke-width="1"/>
+  <rect x="30" y="144" width="90" height="8" rx="4" fill="#5DCAA5" opacity="0.6"/>
+  <circle cx="120" cy="148" r="6" fill="#5DCAA5"/>
+
+  <text x="30" y="168" font-family="'Segoe UI',sans-serif" font-size="10" fill="#718096">BMI  <tspan fill="#5DCAA5">27.0</tspan></text>
+  <rect x="30" y="174" width="180" height="8" rx="4" fill="#1a1535" stroke="#302b63" stroke-width="1"/>
+  <rect x="30" y="174" width="70" height="8" rx="4" fill="#5DCAA5" opacity="0.6"/>
+  <circle cx="100" cy="178" r="6" fill="#5DCAA5"/>
+
+  <text x="30" y="198" font-family="'Segoe UI',sans-serif" font-size="10" fill="#718096">HbA1c  <tspan fill="#5DCAA5">5.5%</tspan></text>
+  <rect x="30" y="204" width="180" height="8" rx="4" fill="#1a1535" stroke="#302b63" stroke-width="1"/>
+  <rect x="30" y="204" width="50" height="8" rx="4" fill="#5DCAA5" opacity="0.6"/>
+  <circle cx="80" cy="208" r="6" fill="#5DCAA5"/>
+
+  <text x="30" y="228" font-family="'Segoe UI',sans-serif" font-size="10" fill="#718096">Blood Glucose  <tspan fill="#5DCAA5">100 mg/dL</tspan></text>
+  <rect x="30" y="234" width="180" height="8" rx="4" fill="#1a1535" stroke="#302b63" stroke-width="1"/>
+  <rect x="30" y="234" width="40" height="8" rx="4" fill="#5DCAA5" opacity="0.6"/>
+  <circle cx="70" cy="238" r="6" fill="#5DCAA5"/>
+
+  <!-- Checkbox row -->
+  <rect x="30" y="254" width="12" height="12" rx="2" fill="#0d2a0d" stroke="#5DCAA5" stroke-width="1"/>
+  <text x="47" y="264" font-family="'Segoe UI',sans-serif" font-size="10" fill="#a0aec0">Hypertension</text>
+  <rect x="150" y="254" width="12" height="12" rx="2" fill="#0d2a0d" stroke="#5DCAA5" stroke-width="1"/>
+  <text x="167" y="264" font-family="'Segoe UI',sans-serif" font-size="10" fill="#a0aec0">Heart Disease</text>
+
+  <!-- Predict button -->
+  <rect x="30" y="272" width="180" height="22" rx="8" fill="#5DCAA5"/>
+  <text x="120" y="287" font-family="'Segoe UI',sans-serif" font-size="12" text-anchor="middle" fill="#0a1a14" font-weight="700">🔍 Predict</text>
+
+  <!-- Separator -->
+  <line x1="230" y1="80" x2="230" y2="295" stroke="#302b63" stroke-width="1"/>
+
+  <!-- Right panel: output -->
+  <rect x="250" y="86" width="590" height="200" rx="12" fill="#0d0a1a" stroke="#302b63" stroke-width="1"/>
+
+  <!-- Risk output card -->
+  <rect x="350" y="110" width="390" height="150" rx="12" fill="#0d2a0d" stroke="#5DCAA5" stroke-width="2"/>
+  <text x="545" y="148" font-family="'Segoe UI',sans-serif" font-size="18" text-anchor="middle" fill="#5DCAA5" font-weight="800">🟢 Low Risk</text>
+  <text x="545" y="190" font-family="'Segoe UI',sans-serif" font-size="36" text-anchor="middle" fill="#5DCAA5" font-weight="800">12.4%</text>
+  <text x="545" y="218" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#718096">Estimated disease probability</text>
+  <text x="545" y="248" font-family="'Segoe UI',sans-serif" font-size="9" text-anchor="middle" fill="#4a5568">⚠️ For informational purposes only. Consult a medical professional.</text>
+
+  <!-- Risk legend -->
+  <circle cx="268" cy="106" r="6" fill="#5DCAA5"/>
+  <text x="280" y="110" font-family="'Segoe UI',sans-serif" font-size="10" fill="#a0aec0">Low (&lt;20%)</text>
+  <circle cx="268" cy="126" r="6" fill="#EF9F27"/>
+  <text x="280" y="130" font-family="'Segoe UI',sans-serif" font-size="10" fill="#a0aec0">Moderate (20–50%)</text>
+  <circle cx="268" cy="146" r="6" fill="#D85A30"/>
+  <text x="280" y="150" font-family="'Segoe UI',sans-serif" font-size="10" fill="#a0aec0">High (&gt;50%)</text>
+
+  <!-- Animated pulse on output -->
+  <circle cx="545" cy="190" r="80" fill="none" stroke="#5DCAA5" stroke-width="1" opacity="0">
+    <animate attributeName="r" values="60;90;60" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
 </svg>
 
-<br/>
+</div>
 
-*⚠️ This project is for educational and portfolio purposes. Not intended for clinical diagnosis.*
+---
 
-**Made with 🩺 + 🤖 + ☕**
+## 📈 Results Interpretation
+
+<div align="center">
+
+| Dataset | Key Insight |
+|---|---|
+| 🩸 **Diabetes-Large** | LightGBM and XGBoost tie at AUC=0.978/0.979. High specificity (0.995) means very few false alarms. HbA1c and blood glucose are dominant features by a large margin. |
+| ❤️ **Heart-Cleveland** | Logistic Regression outperforms tree models — evidence that the decision boundary is approximately linear for this dataset. Specificity=1.0 means zero false positives on the test set. Small dataset (237 train rows) favors simpler models. |
+| 🧬 **Diabetes-Pima** | Hardest dataset — 1988 data, many imputed zeros, noisy features. Feature engineering lifted AUC from 0.823 → 0.838. Glucose and BMI dominate importance. Insulin has lower importance than expected due to 374 original zero values. |
+
+</div>
+
+---
+
+## 📝 Citation
+
+If you use this project or find it helpful, please cite:
+
+```bibtex
+@misc{medrisk2025,
+  title   = {MedRisk Classifier: A Generalizable ML Pipeline for Chronic Disease Prediction},
+  author  = {YOUR NAME},
+  year    = {2025},
+  url     = {https://github.com/YOUR_USERNAME/medrisk-classifier},
+  note    = {Trained on Kaggle GPU · Gradio deployed}
+}
+```
+
+---
+
+<div align="center">
+
+<svg width="860" height="60" viewBox="0 0 860 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="footerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#5DCAA5;stop-opacity:0"/>
+      <stop offset="30%" style="stop-color:#5DCAA5"/>
+      <stop offset="70%" style="stop-color:#7F77DD"/>
+      <stop offset="100%" style="stop-color:#7F77DD;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  <rect height="1" width="860" y="0" fill="url(#footerGrad)"/>
+  <text x="430" y="28" font-family="'Segoe UI',sans-serif" font-size="13" text-anchor="middle" fill="#718096">Built with ❤️ for open-source medical AI · All models trained on free, public datasets</text>
+  <text x="430" y="50" font-family="'Segoe UI',sans-serif" font-size="11" text-anchor="middle" fill="#4a5568">MIT License · Contributions welcome · Star ⭐ if this helped you</text>
+</svg>
 
 </div>
