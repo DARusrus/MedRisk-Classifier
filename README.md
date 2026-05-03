@@ -19,7 +19,7 @@
 
 <br/>
 
-> **🔴 LIVE DEMO →** *(paste your gradio.live link here)*
+> **🔴 LIVE DEMO →** *https://0052dfcabd6c8ad122.gradio.live*
 
 <br/>
 
