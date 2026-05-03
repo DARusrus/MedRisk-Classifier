@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=200&section=header&text=MedRisk%20Classifier&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Generalizable%20ML%20Pipeline%20for%20Chronic%20Disease%20Prediction&descAlignY=58&descSize=16&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=200&section=header&text=MedRisk%20Classifier&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Generalizable%20ML%20Pipeline%20for%20Chronic%20Disease%20Prediction&descAlignY=58&descSize=16&animation=fadeIn" width="100%"/>
 
 <br/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=7C6AF7&center=true&vCenter=true&width=700&lines=3+Datasets.+4+Models.+1+Unified+Pipeline.;LightGBM+%C2%B7+XGBoost+%C2%B7+Random+Forest+%C2%B7+Logistic+Regression;Optuna+Hyperparameter+Tuning+%E2%9C%85;SMOTE+Class+Balancing+%E2%9C%85;Live+Gradio+Demo+%E2%9C%85)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=2DD4BF&center=true&vCenter=true&width=700&lines=3+Datasets.+4+Models.+1+Unified+Pipeline.;LightGBM+%C2%B7+XGBoost+%C2%B7+Random+Forest+%C2%B7+Logistic+Regression;Optuna+Hyperparameter+Tuning+%E2%9C%85;SMOTE+Class+Balancing+%E2%9C%85;Live+Gradio+Demo+%E2%9C%85)](https://git.io/typing-svg)
 
 <br/>
 
@@ -12,7 +12,7 @@
 ![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.4-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
 ![XGBoost](https://img.shields.io/badge/XGBoost-GPU-189AB4?style=for-the-badge&logo=xgboost&logoColor=white)
 ![LightGBM](https://img.shields.io/badge/LightGBM-Optimized-61C454?style=for-the-badge)
-![Optuna](https://img.shields.io/badge/Optuna-50%20Trials-7C6AF7?style=for-the-badge)
+![Optuna](https://img.shields.io/badge/Optuna-50%20Trials-2DD4BF?style=for-the-badge)
 ![Gradio](https://img.shields.io/badge/Gradio-Live%20Demo-FF7C00?style=for-the-badge&logo=gradio&logoColor=white)
 ![Kaggle](https://img.shields.io/badge/Kaggle-GPU%20Notebook-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
@@ -51,20 +51,40 @@ Built as a portfolio-grade project demonstrating end-to-end ML engineering: raw 
 
 <div align="center">
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    PIPELINE CAPABILITIES                        │
-├──────────────────────────┬──────────────────────────────────────┤
-│  🔄 Generalizable Flow   │  Works across any tabular med data   │
-│  ⚖️  SMOTE Balancing     │  Fixes class imbalance on train only │
-│  🧪 4-Model Comparison   │  LR · RF · XGBoost · LightGBM        │
-│  🔬 Optuna Tuning        │  50–100 TPE trials per best model    │
-│  🧬 Feature Engineering  │  8 clinically-motivated new features │
-│  📊 Medical Metrics      │  AUC · F1 · Sensitivity · Specificity│
-│  🖥️  Live Gradio App     │  3-tab UI, public shareable link     │
-│  📸 Auto-saved Plots     │  12 publication-ready figures        │
-└──────────────────────────┴──────────────────────────────────────┘
-```
+<table>
+  <tr>
+    <td align="center" width="200"><b>🔄 Generalizable Flow</b></td>
+    <td>One unified pipeline that works across any tabular medical dataset with minimal adaptation</td>
+  </tr>
+  <tr>
+    <td align="center"><b>⚖️ SMOTE Balancing</b></td>
+    <td>Fixes severe class imbalance on training set only — zero data leakage into test evaluation</td>
+  </tr>
+  <tr>
+    <td align="center"><b>🤖 4-Model Comparison</b></td>
+    <td>Logistic Regression · Random Forest · XGBoost (GPU) · LightGBM trained and ranked per dataset</td>
+  </tr>
+  <tr>
+    <td align="center"><b>🔬 Optuna Tuning</b></td>
+    <td>50–100 TPE trials per best model — learning rate, depth, regularization, subsampling all tuned</td>
+  </tr>
+  <tr>
+    <td align="center"><b>🧬 Feature Engineering</b></td>
+    <td>8 clinically-motivated features added to Pima dataset: glucose×BMI, BP×Age, WHO BMI bins, insulin sensitivity ratios</td>
+  </tr>
+  <tr>
+    <td align="center"><b>📊 Medical Metrics</b></td>
+    <td>ROC-AUC · F1 · Sensitivity · Specificity — not just accuracy, because clinical trade-offs matter</td>
+  </tr>
+  <tr>
+    <td align="center"><b>🖥️ Live Gradio App</b></td>
+    <td>3-tab UI with color-coded risk output (🟢 Low / 🟡 Moderate / 🔴 High) and public shareable link</td>
+  </tr>
+  <tr>
+    <td align="center"><b>📸 Auto-saved Plots</b></td>
+    <td>12 publication-ready figures saved automatically: ROC curves, confusion matrices, feature importance, Optuna history</td>
+  </tr>
+</table>
 
 </div>
 
@@ -74,14 +94,14 @@ Built as a portfolio-grade project demonstrating end-to-end ML engineering: raw 
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {
-  'primaryColor': '#302b63',
+  'primaryColor': '#203a43',
   'primaryTextColor': '#ffffff',
-  'primaryBorderColor': '#7C6AF7',
-  'lineColor': '#7C6AF7',
-  'secondaryColor': '#0f0c29',
-  'tertiaryColor': '#24243e',
-  'edgeLabelBackground': '#302b63',
-  'clusterBkg': '#24243e',
+  'primaryBorderColor': '#2DD4BF',
+  'lineColor': '#2DD4BF',
+  'secondaryColor': '#0f2027',
+  'tertiaryColor': '#2c5364',
+  'edgeLabelBackground': '#203a43',
+  'clusterBkg': '#2c5364',
   'titleColor': '#ffffff'
 }}}%%
 
@@ -94,15 +114,15 @@ flowchart TB
 
     subgraph PREPROCESS["🔧 PREPROCESSING"]
         B1["Zero Imputation\nPima biological fixes"]
-        B2["Label Encoding\nCategorical → Ordinal"]
+        B2["Label Encoding\nCategorical to Ordinal"]
         B3["Train/Test Split\n80/20 Stratified"]
         B4["StandardScaler\nFit on train only"]
         B5["SMOTE\nBalance training set"]
     end
 
-    subgraph ENGINEER["🧬 FEATURE ENGINEERING\nPima only"]
-        C1["glucose × BMI\nInsulin resistance proxy"]
-        C2["BP × Age\nCardiovascular stress"]
+    subgraph ENGINEER["🧬 FEATURE ENGINEERING — Pima only"]
+        C1["glucose x BMI\nInsulin resistance proxy"]
+        C2["BP x Age\nCardiovascular stress"]
         C3["Clinical Bins\nWHO BMI · Glucose thresholds"]
         C4["Ratio Features\nSkin/BMI · Insulin/Glucose"]
     end
@@ -115,18 +135,18 @@ flowchart TB
     end
 
     subgraph TUNING["🔬 OPTUNA TUNING"]
-        E1["TPE Sampler\n50–100 trials"]
+        E1["TPE Sampler\n50-100 trials"]
         E2["Best Config\nper dataset"]
     end
 
     subgraph EVAL["📊 EVALUATION"]
-        F1["ROC-AUC\nF1 · Sensitivity\nSpecificity"]
+        F1["ROC-AUC · F1\nSensitivity · Specificity"]
         F2["Confusion Matrix\nROC Curves\nFeature Importance"]
     end
 
     subgraph DEPLOY["🚀 DEPLOYMENT"]
         G1["Gradio App\n3-Tab Interface"]
-        G2["Public Link\ngradio.live · 72h"]
+        G2["Public Link\ngradio.live"]
     end
 
     A1 & A2 & A3 --> B1
@@ -141,18 +161,18 @@ flowchart TB
 
 ---
 
-## 🔄 Data Pipeline & Sequence Flow
+## 🔄 Data Pipeline Flow
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {
-  'primaryColor': '#302b63',
+  'primaryColor': '#203a43',
   'primaryTextColor': '#ffffff',
-  'primaryBorderColor': '#7C6AF7',
-  'lineColor': '#7C6AF7',
-  'secondaryColor': '#0f0c29',
-  'tertiaryColor': '#24243e',
-  'activationBorderColor': '#7C6AF7',
-  'activationBkgColor': '#302b63',
+  'primaryBorderColor': '#2DD4BF',
+  'lineColor': '#2DD4BF',
+  'secondaryColor': '#0f2027',
+  'tertiaryColor': '#2c5364',
+  'activationBorderColor': '#2DD4BF',
+  'activationBkgColor': '#203a43',
   'sequenceNumberColor': '#ffffff'
 }}}%%
 
@@ -163,35 +183,35 @@ sequenceDiagram
     participant PRE as 🔧 Preprocessor
     participant BAL as ⚖️ SMOTE
     participant TRN as 🤖 Trainer
-    participant OPT as 🔬 Optuna
     participant EVL as 📊 Evaluator
+    participant TUNE as 🔬 Optuna
     participant APP as 🖥️ Gradio App
 
     CSV->>EDA: Load 3 datasets
-    EDA->>EDA: Class balance · Distributions · Correlations
+    EDA->>EDA: Class balance, distributions, correlations
     EDA->>PRE: Pass raw DataFrames
 
-    PRE->>PRE: Impute zeros (Pima)
-    PRE->>PRE: Encode categoricals
+    PRE->>PRE: Impute zeros for Pima dataset
+    PRE->>PRE: Encode categoricals to ordinal
     PRE->>PRE: 80/20 stratified split
-    PRE->>PRE: StandardScaler (train only)
+    PRE->>PRE: StandardScaler fit on train only
     PRE->>BAL: Send training sets
 
     BAL->>BAL: Fit SMOTE per dataset
-    Note over BAL: Diabetes-Large: 6.8k → 73.2k positives
+    Note over BAL: Diabetes-Large 6.8k becomes 73.2k positives
     BAL->>TRN: Balanced training data
 
-    TRN->>TRN: Train LR · RF · XGBoost · LightGBM
-    TRN->>EVL: Predictions + probabilities
-    EVL->>EVL: AUC · F1 · Sensitivity · Specificity
-    EVL->>OPT: Best model per dataset
+    TRN->>TRN: Train LR, RF, XGBoost, LightGBM
+    TRN->>EVL: Predictions and probabilities
+    EVL->>EVL: AUC, F1, Sensitivity, Specificity
+    EVL->>TUNE: Best model per dataset
 
-    OPT->>OPT: 50 TPE trials · Maximize AUC
-    Note over OPT: LightGBM · LR · XGBoost tuned
-    OPT->>EVL: Tuned model scores
-    EVL->>EVL: Baseline vs Tuned comparison
+    TUNE->>TUNE: 50 TPE trials, maximize AUC
+    Note over TUNE: LightGBM, LR, XGBoost tuned separately
+    TUNE->>EVL: Tuned model scores
+    EVL->>EVL: Baseline vs tuned comparison
 
-    EVL->>APP: Final tuned models + scalers
+    EVL->>APP: Final tuned models and scalers
     APP->>APP: Build 3-tab Gradio interface
     APP-->>APP: Launch with share=True
     Note over APP: Public gradio.live URL generated
@@ -221,7 +241,7 @@ sequenceDiagram
 
 - **Diabetes-Large:** LightGBM and XGBoost tied at AUC=0.978. The 8.5% class imbalance was the main challenge — SMOTE expanded the minority class from 6,800 → 73,200 samples. High specificity (0.995) comes at the cost of sensitivity (0.709), a clinical trade-off worth noting.
 
-- **Diabetes-Pima:** The hardest dataset — 1988 data, many biologically impossible zeros imputed, small sample size (768). Feature engineering added 8 clinically motivated features (glucose×BMI, BP×Age, WHO BMI bins) and pushed AUC from 0.823 → 0.838. Stacking did not outperform single tuned XGBoost, confirming the data ceiling.
+- **Diabetes-Pima:** The hardest dataset — 1988 data, many biologically impossible zeros imputed, small sample size (768). Feature engineering added 8 clinically motivated features and pushed AUC from 0.823 → 0.838. Stacking did not outperform single tuned XGBoost, confirming the data ceiling.
 
 ---
 
@@ -241,7 +261,7 @@ sequenceDiagram
 ![XGBoost](https://img.shields.io/badge/XGBoost-189AB4?style=for-the-badge)
 ![LightGBM](https://img.shields.io/badge/LightGBM-61C454?style=for-the-badge)
 ![Imbalanced-Learn](https://img.shields.io/badge/imbalanced--learn-SMOTE-FF6B6B?style=for-the-badge)
-![Optuna](https://img.shields.io/badge/Optuna-7C6AF7?style=for-the-badge)
+![Optuna](https://img.shields.io/badge/Optuna-2DD4BF?style=for-the-badge)
 
 <br/>
 
@@ -254,12 +274,12 @@ sequenceDiagram
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {
-  'primaryColor': '#302b63',
+  'primaryColor': '#203a43',
   'primaryTextColor': '#ffffff',
-  'primaryBorderColor': '#7C6AF7',
-  'lineColor': '#7C6AF7',
-  'secondaryColor': '#0f0c29',
-  'tertiaryColor': '#24243e'
+  'primaryBorderColor': '#2DD4BF',
+  'lineColor': '#2DD4BF',
+  'secondaryColor': '#0f2027',
+  'tertiaryColor': '#2c5364'
 }}}%%
 
 flowchart LR
@@ -310,7 +330,7 @@ medrisk-classifier/
 │   ├── categorical_breakdown.png    ← Gender/smoking breakdown
 │   ├── smote_balance.png            ← Before vs after SMOTE
 │   ├── target_correlation.png       ← Feature-target Pearson r
-│   ├── metrics_heatmap.png          ← Model × metric heatmap
+│   ├── metrics_heatmap.png          ← Model x metric heatmap
 │   ├── roc_curves.png               ← ROC curves all models
 │   ├── confusion_matrices.png       ← Best model confusion matrices
 │   ├── feature_importance.png       ← RF + LightGBM importance
@@ -371,27 +391,26 @@ PATHS = {
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {
-  'primaryColor': '#302b63',
+  'primaryColor': '#203a43',
   'primaryTextColor': '#ffffff',
-  'primaryBorderColor': '#7C6AF7',
-  'lineColor': '#7C6AF7',
-  'secondaryColor': '#0f0c29',
-  'tertiaryColor': '#24243e'
+  'primaryBorderColor': '#2DD4BF',
+  'lineColor': '#2DD4BF',
+  'secondaryColor': '#0f2027',
+  'tertiaryColor': '#2c5364'
 }}}%%
 
 flowchart LR
     NOW["✅ Current\nv1.0"]
-
-    V2["🔜 v2.0\nCross-validation\ninstead of single split\nSHAP explainability\nper prediction"]
-
-    V3["🔭 v3.0\nHugging Face\npermanent deployment\nDocker container\nREST API"]
-
-    V4["🚀 v4.0\nNeural Networks\nTabNet / TabTransformer\nFederated Learning\nfor privacy"]
+    V2["🔜 v2.0\nCross-validation\nSHAP explainability"]
+    V3["🔭 v3.0\nHugging Face\nDocker + REST API"]
+    V4["🚀 v4.0\nTabNet Neural Nets\nFederated Learning"]
 
     NOW --> V2 --> V3 --> V4
 ```
 
 <br/>
+
+<div align="center">
 
 | Priority | Improvement | Expected Impact |
 |:---:|:---|:---|
@@ -401,6 +420,8 @@ flowchart LR
 | 🟡 Medium | **TabNet / TabTransformer** neural baselines | Benchmark deep learning vs gradient boosting on tabular data |
 | 🟢 Low | REST API via FastAPI + Docker | Enable integration with external clinical systems |
 | 🟢 Low | Add **3–5 more datasets** (stroke, CKD, liver disease) | Validate generalizability claim more rigorously |
+
+</div>
 
 ---
 
@@ -420,7 +441,7 @@ flowchart LR
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=120&section=footer&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0f2027&height=120&section=footer&animation=fadeIn" width="100%"/>
 
 **Built with 🩺 for the ML + Healthcare community**
 
